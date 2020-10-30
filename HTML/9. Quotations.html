@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML Quotation and Citation Elements</title>
+</head>
+<body>
+	<h2>HTML &lt;blockquote&gt; for Quotations</h2>
+	<p>blockquote 태그는 인용 블록 요소를 나타낸다. 주로 들여쓰기를 한 것으로 그려진다.<br>
+	인용문의 출처 URL은 cite 특성으로 &lt;cite&gt; 요소로 제공할 수 있다.</p>
+	<p>Here is a quote from WWF's website:</p>
+	<blockquote cite="http://www.worldwildlife.org/who/index.html">
+	For 50 years, WWF has been protecting the future of nature.
+	The world's leading conservation organization,
+	WWF works in 100 countries and is supported by
+	1.2 million members in the United States and
+	close to 5 million globally.
+	</blockquote>
+	
+	
+	<h2>HTML &lt;q&gt; for short Quotations</h2>
+	<p>q 태그는 짧은 인용구를 나타내며 "인용구"로 표현된다.
+	<p>WWF's goal is to: <q>Build a future where people live in harmony with nature</q></p>
+	
+	<h2>HTML &lt;abbr&gt; for Abbreviations</h2>
+	<p>abbr 태그는 "HTML","CSS","Mr.","Dr.","ASAP","ATM" 과 같은 약어 또는 두문자어를 정의한다.<br>
+	Marking abbreviations는 브라우저, 번역 시스템 및 검색 엔진에 유용한 정보를 제공 할 수 있다.<br>
+	<b>Tip: </b>요소 위로 마우스를 가져갈 때 약어/약어에 대한 설명을 표시하려면 전체 제목 속성을 사용하면 된다.
+	<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+	
+	
+	<h2>HTML &lt;address&gt; for Contact Information</h2>
+	<p>address 태그는 문서 또는 기사의 작성자/소유자에 대한 연락처 정보를 정의한다.<br>
+	address 요소의 텍스트는 일반적으로 기울임 꼴로 렌더링되며 브라우저는 항상 &lt;address&gt;요소 앞뒤에 줄 바꿈을 추가한다.</p>
+	<address>
+	Written by John Doe.<br>
+	Visit us at:<br>
+	Example.com<br>
+	Box 564, Disneyland<br>
+	USA
+	</address>
+	
+	
+	<h2>HTML &lt;cite&gt; for Work Title</h2>
+	<p>cite 태그는 창의적인 작품(예: 책, 시, 노래, 영화, 그림, 조각 등)의 제목을 정의한다.<br>
+	&lt;cite&gt; 요소의 텍스트는 일반적으로 기울임 꼴로 렌더링 된다.
+	<img src="img/scream.jpg" width="220" height="277" alt="The Scream">
+	<p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+	
+	<h2>HTML &lt;bdo&gt; Bi-Directional Override</h2>
+	<p>BDO는 Bi-Directional Override를 의미한다.<br>
+	&lt;bdo&gt; 태그는 현재 텍스트 방향을 재정의하는 데 사용된다.</p>
+	<table border="1">
+		<tr style="background-color:gray";>
+			<th>속성값</th>
+			<th>설명</th>
+		</tr>
+		<tr>
+			<td>ltr</td>
+			<td>왼쪽부터 오른쪽 방향으로 써지는 텍스트 방향성(left-to-right)</td>
+		</tr>
+		<tr>
+			<td>rtl</td>
+			<td>오른쪽부터 왼쪽 방향으로 써지는 텍스트 방향성(right-to-left)</td>
+		</tr>
+	</table>
+	<p>This text will be written from right to left</p>
+	<bdo dir="rtl">This text will be written from right to left</bdo>
+	<bdo dir="ltr">This text will be written from right to left</bdo>
+</body>
+</html>

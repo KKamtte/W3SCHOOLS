@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML Elements</title>
+</head>
+<body>
+	<h2>HTML Elements</h2>
+	HTML elements는 시작태그, 요소, 닫는태그로 정의되어있다.
+	<br>
+	<p>&lt;tagname&gt;Content goes here...&lt;/tagname&gt;</p>
+	HTML의 모든 요소는 시작태그와 닫는태그가 있다:
+	<p>&lt;h1&gt;My First Heading&lt;/h1&gt;</p>
+	<p>&lt;p&gt;My first paragraph.&lt;/p&gt;</p>
+	<table border="1" width="400">
+		<tr>
+			<th>Start tag</th>
+			<th>Element content</th>
+			<th>End tag</th>
+		</tr>
+		<tr>
+			<td>&lt;h1&gt;</td>
+			<td>My First Heading</td>
+			<td>&lt;/h1&gt;</td>
+		</tr>
+		<tr>
+			<td>&lt;p&gt;</td>
+			<td>My first paragraph.</td>
+			<td>&lt;/p&gt;</td>
+		</tr>
+		<tr>
+			<td>&lt;br&gt;</td>
+			<td>none</td>
+			<td>none</td>
+		</tr>
+	</table>
+
+	<h2>Nested HTML Elements</h2>
+	HTML의 요소들은 중첩될 수 있다. 모든 HTML의 문서는 HTML요소들의 중첩으로 구성되어있다.
+
+	<h2>Never Skip End Tag</h2>
+	몇몇 HTML elements는 end tag를 쓰지않더라도 바로 나타난다.( ex)&lt;p&gt;)
+	<p>This is a paragraph
+	<p>This is a paragraph
+	<h2>Empty HTML Elements</h2>
+	HTML elements 중 content가 없는 것은 empty elements라고 한다. &lt;br&gt;태그의 경우 줄
+	바꿈으로 정의되어있고, 닫는 태그가 없는 빈 요소이다.
+	<p>
+		This is a <br> paragraph with a line break.
+	</p>
+
+	<h2>HTML is Not Case Sensitive</h2>
+	HTML 태그는 대소문자를 구분하지 않는다. &lt;P&gt;와 &lt;p&gt;는 동일한 의미를 갖는다.
+	<br> HTML표준 문서의 경우 대소문자 구분을 요구하지않지만 W3C는 HTML에서 소문자를 권장하고 XHTML과
+	같은 더 엄격한 문서 유형에는 소문자를 요구한다.
+</body>
+</html>
