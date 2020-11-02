@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML Image Maps</title>
+</head>
+<body>
+	<p>HTML 이미지 맵을 사용하면 이미지에서 클릭 가능한 영역을 만들 수 있다.</p>
+	
+	<h2>Image Maps</h2>
+	<p>HTML &lt;map&gt; 태그는 이미지 맵을 정의한다. 이미지 맵은 클릭 가능한 영역이 있는 이미지이다.<br>
+	&lt;area&gt; 태그로 정의된다.</p>
+	
+	<img src="img/workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+	<map name="workmap">
+		<area shape="rect" coords="34,44,270,350" alt="Computer" href="https://en.wikipedia.org/wiki/Computer">
+		<area shape="rect" coords="290,172,333,250" alt="Phone" href="https://en.wikipedia.org/wiki/Telephone">
+		<area shape="circle" coords="337,300,44" alt="Cup of coffee" href="https://en.wikipedia.org/wiki/Coffee">
+	</map>
+	
+	<ol>
+		<li>Image 태그에 usemap 속성을 넣는다</li>
+		<p style="border:2px solid powderblue;">&lt;img src="image.jpg" alt="text" usemao="#workmap">&gt;
+		<li>map 요소를 생성한다</li>
+		<p style="border:2px solid powderblue;">&lt;map name="workmap"&gt;
+		<li>area 속성을 추가한다</li>
+		<p style="border:2px solid powderblue;">&lt;area shape="shape" coords="number"&gt;
+	</ol>
+	<h2>Shape</h2>
+	<p>클릭 가능한 영역의 모양을 정의해야하며 다음 값 중 하나를 선택할 수 있다.</p>
+	<ul>
+		<li>rect - 직사각형 영역을 정의한다.</li>
+		<li>circle - 원형 영역을 정의한다.</li>
+		<li>poly - 다각형 영역을 정의한다.</li>
+		<li>default - 전체 영역을 정의한다.</li>
+	</ul>
+	
+	<h3>Shape="rect"</h3>
+	<p>rect의 좌표는 쌍으로 되어있는데 하나는 x축 용이고 하나는 y축 용이다.</p>
+	<p>따라서 좌표 34,44는 왼쪽 여백에서 34픽셀, 상단에서 44픽셀에 위치한다.</p>
+	<img src="img/rect1.png" width="400" height="379">
+	<p>좌표 270,350은 왼쪽 여백에서 270픽셀, 위쪽에서 350픽셀에 위치한다.</p>
+	<img src="img/rect2.png" width="400" height="379">
+	<p>따라서 다음과 같은 범위가 &lt;area shape="rect" coords="34, 44, 270, 350"&gt;이다.</p>
+	<img src="img/rect3.png" width="400" height="379">
+	
+	<h3>Shape="circle"</h3>
+	<p>원 영역을 추가하려면 먼저 원의 중심 좌표를 찾는다: 337,300</p>
+	<img src="img/circle1.png" width="400" height="379">
+	<p>그 다음 원의 반지름을 지정한다: 44 pixels</p>
+	<img src="img/circle2.png" width="400" height="379">
+	<p>따라서 다음과 같은 범위가 &lt;area shape="circle" coords="337, 300, 44"&gt;이다.</p>
+	<img src="img/circle3.png" width="400" height="379">
+	
+	<h3>Shape="poly"</h3>
+	<p>직선으로 형성된 모양을 만드는 여러 좌표 점을 포함한다.<br>
+	이것은 모든 모양을 만드는데 사용할 수 있다.</p>
+	<p>각각의 모든 x좌표와 y좌표를 조사하여 각 쌍에 대해 넣으면 된다</p>
+	<p>&lt;area shape="poly" coords="140,121,181,116,204,160,204,222,191,270,140,329,85,355,58,352,37,322,40,259,103,161,128,147"&gt;</p>
+	<img src="img/poly1.png" width="400" height="633">
+	<p>다음과 같은 범위가 지정이 된다.</p>
+	<img src="img/poly2.png" width="400" height="633">
+	
+	<h2>Image Map and JavaScript</h2>
+	<p>클릭 가능한 영역은 JavaScript 기능을 트리거 할 수 있다.<br>
+	JavaScript 함수를 실행하려면 &lt;area&gt;요소에 클릭 이벤트를 추가하면 된다.</p>
+	
+	<img src="img/workplace.jpg" alt="Workplace" usemap='#workmap2' width="400" height="379">
+	
+	<map name="workmap2">
+		<area shape="rect" coords="34,84,270,350" alt="Computer" onclick="computerClick()">
+  		<area shape="rect" coords="290,172,333,250" alt="Phone" onclick="phoneClick()">
+		<area shape="circle" coords="337,300,44" onclick="cupClick()">
+	</map>
+	
+	<script>
+		function computerClick() {
+			alert("You clicked the computer!");
+		}
+		function phoneClick() {
+			alert("You clicked the phone!");
+		}
+		function cupClick() {
+			alert("You clicked the coffee cup!");
+		}
+	</script>
+	
+	<h2>HTML Image Tags</h2>
+	<table border="1">
+		<tr>
+			<th>Tag</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><a href="https://www.w3schools.com/tags/tag_img.asp">&lt;img&gt;</a></td>
+			<td>image 정의</td>
+		</tr>
+		<tr>
+			<td><a href="https://www.w3schools.com/tags/tag_map.asp">&lt;map&gt;</a></td>
+			<td>image map 정의</td>
+		</tr>
+		<tr>
+			<td><a href="https://www.w3schools.com/tags/tag_area.asp">&lt;area&gt;</a></td>
+			<td>image map 내에서 클릭 가능한 영역을 정의</td>
+		</tr>
+		<tr>
+			<td><a href="https://www.w3schools.com/tags/tag_picture.asp">&lt;picture&gt;</a></td>
+			<td>여러 이미지 리소스에 대한 컨테이너를 정의</td>
+		</tr>
+	</table>
+</body>
+</html>

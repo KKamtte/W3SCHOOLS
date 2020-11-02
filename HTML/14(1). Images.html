@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML Images</title>
+</head>
+<body>
+	<p>이미지는 웹 페이지의 디자인과 모양을 향상시킬수 있다.</p>
+	
+	<h2>HTML Images Syntax</h2>
+	<p>HTML &lt;img&gt; 태그는 웹 페이지에 이미지를 포함하는 데 사용된다.</p>
+	<p>이미지는 기술적으로 웹 페이지에 삽입되지 않는다.<br>
+	이미지는 웹 페이지에 링크된다. &lt;img&gt; 태그는 참조 된 이미지를 위한 보관공간을 만든다.</p>
+	<p>&lt;img&gt;태그는 비어 있고 속성만 포함하고 닫는 태그가 없다.</p>
+	<p>&lt;img&gt;태그에는 두 가지 필수 속성이 있다.</p>
+	<ul>
+		<li>src-이미지의 경로를 지정한다.</li>
+		<li>alt-이미지의 대체 텍스트를 지정한다.</li>
+	</ul>
+	<h4>Syntax</h4>
+	<p style="border:4px solid powderblue;">&lt;img src=<i style="color:blue;">"url"</i> alt=<i style="color:blue;">"alternatetext"</i>&gt;</p>
+
+	
+	<h2>The src Attribute</h2>
+	<p>필수 src 속성은 이미지에대한 경로(URL)지정이다.</p>
+	<p><b>Note: </b>웹 페이지가 로드될때, 그 순간 웹 서버에서 이미지를 가져와 페이지에 삽입하는 것은 브라우저 이다.<br>
+	따라서 이미지가 실제로 웹 페이지와 관련하여 동일한 위치에 있는지 확인해야한다. 그렇지 않으면 방문자에게 끊어진 링크 아이콘이 표시된다.<br>
+	브라우저가 이미지를 찾을 수 없는 경우 끊어진 링크 아이콘과 대체 텍스트가 표시된다.</p>
+	<img src="img/img_chania.jpg" alt="Flowers in Chania" width="460" height="345">
+	
+	<h2>Image Size - Width and Height</h2>
+	<p>style 속성을 사용하여 이미지의 너비와 높이를 지정할 수 있다.</p>
+	<p style="border:4px solid powderblue;">&lt;img src="url" alt="text" style=<i style="color:blue;">"width:500px;height:600px;"</i>&gt;<br>
+	&lt;img src="url" alt="text" <i style="color:blue;">width="500" height="600"</i>&gt;</p>
+	
+	
+	<h2>Images on Another Server/Website</h2>
+	<p>일부 웹 사이트는 다른 서버의 외부 이미지를 가르킨다.<br>
+	다른 서버의 이미지를 가리키려면 src속성에 절대URL을 지정해야 한다.</p>
+	<p style="border:4px solid powderblue;">&lt;img src=<i style="color:blue;">"https://www.w3schools.com/images/w3schools_green.jpg"</i> alt=<i style="color:blue;">W3Schools.com</i></p>
+	<img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com" style="width:104px;height:142px;">
+	
+	
+	<h2>Image Floating</h2>
+	<p>CSS의 float 속성을 사용하여 이미지가 텍스트의 오른쪽이나 왼쪽으로 떠오르게할 수 있다.</p>
+	
+	<p style="border: 2px solid powderblue;">우측에 이미지 생성<br>
+	&lt;img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;"&gt;<br><br>
+	좌측에 이미지 생성<br>
+	&lt;img src="smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;"&gt;</p>
+	
+	<p>
+	<img src="img/smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+	A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.
+	</p>
+
+	<p><strong>Float the image to the left:</strong></p>
+	<p>
+	<img src="img/smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">
+	A paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.  
+	</p>
+	
+	<h2>Common Image Formats</h2>
+	<table border="1">
+		<tr>
+			<th>Abbreviation(약어)</th>
+			<th>File Format(파일 형식)</th>
+			<th>File Extension(확장자)</th>
+		</tr>
+		<tr>
+			<td>APNG</td>
+			<td>애니메이션 휴대용 네트워크 그래픽</td>
+			<td>.apng</td>
+		</tr>
+		<tr>
+			<td>GIF</td>
+			<td>그래픽 교환 형식</td>
+			<td>.gif</td>
+		</tr>
+		<tr>
+			<td>ICO</td>
+			<td>ICO Microsoft 아이콘</td>
+			<td>.ico, .cur</td>
+		</tr>
+		<tr>
+			<td>JPEG</td>
+			<td>공동 사진 전문가 그룹 이미지</td>
+			<td>.jpg, .jpeg, .jfif, .pjpeg, .pjp</td>
+		</tr>
+		<tr>
+			<td>PNG</td>
+			<td>Portable Network Graphics</td>
+			<td>.png</td>
+		</tr>
+		<tr>
+			<td>SVG</td>
+			<td>확장 가능한 벡터 그래픽</td>
+			<td>.svg</td>
+		</tr>
+	</table>
+</body>
+</html>

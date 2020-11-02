@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML Links - Create Bookmarks</title>
+</head>
+<body>
+	<p>HTML 링크를 사용하여 책갈피를 만들 수 있으므로 독자가 웹 페이지의 특정 부분으로 이동할 수 있다.</p>
+	
+	<h2>Create a Bookmark in HTML</h2>
+	<p>웹 페이지가 매우 긴 경우 책갈피가 유용할 수 있다.<br>
+	책갈피를 만들려면 먼저 책갈피를 만든 다음 링크를 추가하면 된다.<br>
+	링크를 클릭하면 페이지가 북마크가 있는 위치까지 아래 또는 위로 스크롤 된다.</p>
+	
+	<p>우선, <b>id</b> 속성을 이용해 북마크를 만든다.</p>
+	<p style="border: 20px solid powderblue; padding:10px;">&lt;h2 id="C4"&gt;Chapter 4&gt;/h2&gt;</p>
+	<p>다음으로, 동일한 페이지 내에서 책갈피에 대한 링크("4장으로 이동")를 추가한다.</p>
+	<p style="border: 20px solid powderblue; padding:10px;">&lt;a href="#C4"&gt;Jump to Chapter 4&lt;/a&gt;</p>
+	<p>다른 페이지에 북마크를 추가하는 방법도 가능하다.</p>
+	<p style="border:20px solid powderblue; padding:10px;">&lt;a href="html_demo.html#C4"&gt;Jump to Chapter 4&lt;/a&gt;</p>
+	
+	<a href="CSS/BookMark_ex.html" target="_blank" style="background-color:yellow; padding:15px 25px; text-decoration:none;">예시</a>
+</body>
+</html>
