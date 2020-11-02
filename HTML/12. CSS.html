@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML Style - CSS</title>
+</head>
+<body>
+	<h2>What is CSS?</h2>
+	<p>CSS는 Cascadeing Style Sheets를 의미한다.<br>
+	CSS는 많은 작업을 절약한다. 한 번에 여러 웹 페이지의 레이아웃을 제어할 수 있다.<br>
+	CSS를 사용하면 색상, 글꼴, 텍스트 크기, 요소 사이 간격, 요소 배치 및 배치 방법, 사용할 이미지 또는 배경 색상, 다양한 장치 및 화면 크기에 대한 다양한 디스플레이를 제어할 수 있다.</p>
+	<p><strong>Tip: </strong>Cascading 이라는 단어는 부모 요소에 적용된 스타일이 부모내의 모든 자식 요소에도 적용됨을 의미한다. 따라서 텍스트 색상을 "파란색"으로 설정하면 본문 내의 모든 제목, 단락 및 기타 텍스트 요소도 동일한 색상을 갖게 된다.</p>
+	
+	
+	<h2>Using CSS</h2>
+	<p>CSS는 3가지 방법으로 HTML 문서에 추가할 수 있다.
+	<ul>
+		<li>Inline - HTML 요소 내부의 스타일 속성 사용</li>
+		<li>Internal - %lt;head&gt;섹션에서 &lt;style&gt; 요소 사용
+		<li>External - &lt;link&gt; 요소를 사용하여 외부 CSS 파일에 연결
+	</ul>
+	<p>CSS를 추가하는 가장 일반적인 방법은 외부 CSS파일에 스타일을 유지하는 것이다<br>
+	그러나 튜토리얼에서는 인라인 및 내부 스타일을 사용한다</p>
+	
+	
+	<h2>Inline CSS</h2>
+	<p>Inline CSS는 단일 HTML 요소에 고유한 스타일을 적용하는 데 사용된다.<br>
+	Inline CSS는 HTML 요소의 스타일 속성을 사용한다.<br>
+	다음 예제어서는 &lt;h1&gt; 요소의 텍스트 색상을 파란색으로 설정하고 &lt;p&gt; 요소의 텍스트 색상을 빨간색으로 설정한다.
+	
+	<h3 style="color:blue;">A Blue Heading</h3>
+	<p style="color:red;">A red paragraph.</p>
+	
+	<h2>Internal CSS</h2>
+	<p>Internal CSS는 단일 HTML페이지의 스타일을 정의 하는데 사용된다.<br>
+	Internal CSS는 &lt;style&gt;요소 내에 있는 HTML페이지의 &lt;head&gt; 섹션에 정의된다.<br>
+	다음 <a href="CSS/InternalCSS_ex.html">예제</a>에서 해당 페이지의 모든 &lt;h1&gt; 요소의 텍스트 색상을 파란색으로 설정하고 모든 &lt;p&gt;요소의 텍스트 색상을 빨간색으로 설정한다. 또한 페이지는 "powderblue"색상으로 표시된다.</p>
+	
+	
+	<h2>External CSS - <a href="CSS/ExternalCSS_ex.html" style="font-size:18px">예제</a></h2>
+	<p>외부 스타일 시트는 많은 HTML 페이지의 스타일을 정의하는 데 사용된다.<br>
+	외부 스타일 시트를 사용하려면 각 HTML 페이지의 &lt;head&gt; 섹션에 링크를 추가하면된다.</p>
+	
+	
+	
+	<h2>CSS Colors, Fonts and Sizes - <a href="CSS/ColorFontSize_ex.html" style="font-size:18px">예제</a></h2>
+	<p>일반적으로 사용되는 몇가지 CSS의 예제가 있다.<br>
+	CSS color 속성은 사용할 텍스트의 색상을 정의한다.<br>
+	CSS font-family 속성은 사용할 글꼴을 정의한다.<br>
+	CSS font-size 속성은 사용할 텍스트 크기를 정의한다.</p>
+	
+	
+	<h2>CSS Border - <a href="CSS/Border_ex.html" style="font-size:18px">예제</a></h2>
+	<p>CSS border 속성은 HTML 요소 주위의 테두리를 정의한다<br>
+	<strong>Tip: </strong>거의 모든 HTML 요소에 테두리를 정의 할 수 있다.</p>
+	
+	
+	<h2>CSS Padding - <a href="CSS/Padding_ex.html" style="font-size:18px">예제</a></h2>
+	<p>CSS padding 속성은 텍스트와 테두리 사이의 패딩(공백)을 정의한다.</p>
+	
+	
+	<h2>CSS Margin - <a href="CSS/Margin_ex.html" style="font-size:18px">예제</a></h2>
+	<p>CSS margin 속성은 테두리 외부의 여백(공백)을 정의한다.</p>
+	
+	
+	<h2>Link to External CSS - <a href="CSS/LinkToExternalCSS_ex.html" style="font-size:18px">예제</a></h2>
+	<p>외부 스타일 시트는 전체 URL 또는 현재 웹 페이지에 상대적인 경로로 참조 할 수 있다.<br>
+	현재 웹사이트의 html 폴더에 있는 스타일 시트는 다음과 같이 링크를 건다.</p>
+	<p>&lt;link rel="stylesheet" href="/html/styles.css"&gt;</p>
+	<p>동일한 경로에 있는 경우 파일 명만 적어주면 된다.</p>
+	<p>&lt;link rel="stylesheet" href="styles.css"&gt;</p>
+	
+	
+	<h2>HTML Style Tags</h2>
+	<table border="1">
+		<tr>
+			<th>Tag</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><a href="https://www.w3schools.com/tags/tag_style.asp">&lt;style&gt;</a></td>
+			<td>HTML문서의 스타일 정보를 정의한다.</td>
+		</tr>
+		<tr>
+			<td><a href="https://www.w3schools.com/tags/tag_link.asp">&lt;link&gt;</a></td>
+			<td>문서와 외부 리소스 간의 링크를 정의한다.</td>
+		</tr>
+	</table>
+	
+	<p style="padding:10px 20px; background-color:lawngreen">사용가능한 모든 HTML 태그의 정보 : <a href="https://www.w3schools.com/tags/default.asp">HTML Tag Reference</a>.</p>
+</body>
+</html>
