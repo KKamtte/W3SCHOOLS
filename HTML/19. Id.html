@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML id Attribute</title>
+<style>
+	#myHeader4 {
+		background-color: lightblue;
+		color: black;
+		padding: 40px;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<p>HTML id 속성은 HTML요소의 고유 ID를 지정하는데 사용된다.<br>
+	HTML 문서에서 동일한 ID를 가진 요소를 두 개 이상 가질수 없다.</p>
+	
+	<h2>Using The id Attribute</h2>
+	<h4 id="myHeader4">My Header 4</h4>
+	
+	<h2>Difference Between Class and ID</h2>
+	<p>클래스 이름은 여러 HTML요소에서 사용할 수 있지만<br>
+	ID 이름은 페이지 내 하나의 HTML요소에서만 사용해야 한다.</p>
+	
+	<h2><a href="13(3). LinkBookmarks.html.">HTML Bookmarks with ID and Links</a></h2>
+	
+	<h2>Using The id Attribute in JavaScript</h2>
+	<h3 id="myHeader3">Hello World!</h3>
+	<button onclick="displayResult()">Change text</button>
+	
+	<script>
+	function displayResult() {
+		document.getElementById("myHeader3").innerHTML = "Have a nice day!";
+	}
+	</script>
+</body>
+</html>

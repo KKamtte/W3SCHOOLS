@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Unordered Lists</title>
+<style>
+	table {
+		border-collapse:collapse;
+	}
+	td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+	tr:nth-child(even){
+		background-color: #dddddd;
+	}
+</style>
+</head>
+<body>
+	<h2>Unordered HTML List - Choose List Item Marker</h2>
+	<p>CSS list-style-type 속성은 목록 항목 마커의 스타일을 정의하는데 사용된다.</p>
+	
+	<table>
+		<tr>
+			<th>Value</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>disc</td>
+			<td>글 머리 기호(기본값)</td>
+		</tr>
+		<tr>
+			<td>circle</td>
+			<td>원</td>
+		</tr>
+		<tr>
+			<td>square</td>
+			<td>사각형</td>
+		</tr>
+		<tr>
+			<td>none</td>
+			<td>표시하지 않음</td>
+		</tr>
+	</table>
+	
+	<h2>Disc</h2>
+	<ul style="list-style-type:disc;">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Milk</li>
+	</ul>
+	
+	<h2>Circle</h2>
+	<ul style="list-style-type:circle;">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Milk</li>
+	</ul>
+	
+	<h2>Square</h2>
+	<ul style="list-style-type:square;">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Milk</li>
+	</ul>
+	
+	<h2>None</h2>
+	<ul style="list-style-type:none;">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Milk</li>
+	</ul>
+	
+	<h2>Nested HTML Lists</h2>
+	<p>list 속에 list를 사용할 수 있다.</p>
+	<ul>
+		<li>Coffee</li>
+		<li>Tea</li>
+		<ul>
+			<li>Black tea</li>
+			<li>Green tea</li>
+		</ul>
+		<li>Milk</li>
+	</ul>
+	
+	<h2><a href="CSS/NavigationMenu.html">Horizontal List with CSS</a></h2>
+	<p>HTML 목록은 CSS를 사용하여 다양한 방식으로 스타일을 지정할 수 있다.</p>
+</body>
+</html>

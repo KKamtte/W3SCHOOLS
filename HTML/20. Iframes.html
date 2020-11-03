@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML Iframes</title>
+</head>
+<body>
+	<p>HTML iframe은 웹 페이지 내에 웹 페이지를 표시하는데 사용된다.</p>
+	
+	<h2>HTML Iframe Syntax</h2>
+	<p>HTML &lt;iframe&gt; 태그는 인라인 프레임을 지정한다.<br>
+	<p>인라인 프레임은 현재 HTML 문서 내에 다른 문서를 포함하는데 사용된다.</p>
+	<h3>Syntax</h3>
+	<p style="border:2px solid powderblue">&lt;<span style="color:green">iframe</span> <span style="color:tomato">src</span>=<i style="color:blue">"url"</i> <span style="color:tomato">title</span>=<i style="color:blue">"description"</i>&gt;
+	
+	<h2>Iframe - Set Height and Width</h2>
+	<p>height와 width 속성을 이용하여 iframe의 크기를 조절할 수 있다.</p>
+	<iframe src="01. Tutorial.html" height="200" width="300" title="Iframe Example"></iframe>
+	<p>또는 CSS의 style속성을 추가하고 height와 width속성을 이용할 수 도 있다.
+	<iframe src="02. Basic.html" style="height:200px;width:400px;" title="Iframe Example"></iframe>
+	
+	<h2>Iframe - Remove the Border</h2>
+	<p>CSS의 style속성을이용해 border속성을 제거할 수 있다.</p>
+	<iframe src="03. Elements.html" style="border:none;" title="Iframe Example"></iframe>
+	<p>또는 border의 크기와 색상을 변경할 수 있다.</p>
+	<iframe src="04. Attributes.html" style="border:10px solid red;" title="Iframe Example"></iframe>
+	
+	<h2>Iframe - Target for a Link</h2>
+	<p>iframe을 링크의 대상 프레임으로사용할 수 있다.<br>
+	링크의 대상 속성은 iframe의 name 속성을 참조해야한다.</p>
+	
+	<iframe src="05. Headings.html" name="iframe_a" height="300px" width="100%" title="Iframe Example"></iframe>
+	
+	<p><a href="06. Paragraphs.html" target="iframe_a">paragraphs</a>
+</body>
+</html>

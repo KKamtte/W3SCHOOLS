@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML class Attribute</title>
+<style>
+	.city {
+		background-color:tomato;
+		color:white;
+		border: 2px solid black;
+		margin: 20px;
+		padding: 20px;
+	}
+	.note {
+		font-size: 120%;
+		color: red;
+	}
+	.country {
+		background-color: tomato;
+		color: white;
+		padding: 10px;
+	}
+	.main {
+		text-align: center;
+	}
+	.asia {
+		text-align: right;
+	}
+	.person {
+		background-color: tomato;
+		color: white;
+		padding: 10px;
+	}
+</style>
+</head>
+<body>
+	<p>HTML 클래스 속성은 HTML요소에 대한 클래스를 지정하는데 사용된다.<br>
+	여러 HTML요소가 동일한 클래스를 공유할 수 있다.</p>
+	
+	<h2>Using The class Attribute</h2>
+	<p>클래스 속성은 스타일 시트에서 클래스 이름을 가리키는데 자주 사용된다.<br>
+	또한 특정 클래스 이름으로 요소에 액세스하고 조작하기 위해 JavaScript에서 사용할 수 있다.</p>
+	
+	<div class="city">
+	<h3>London</h3>
+	<p>London is the capital of England.</p>
+	</div>
+	
+	<div class="city">
+	<h3>Paris</h3>
+	<p>Paris is the captical of France.</p>
+	</div>
+	
+	<div class="city">
+	<h3>Tokyo</h3>
+	<p>Tokyo is the capital of Japan.</p>
+	</div>
+	
+	<h3>My <span class="note">Important</span> Heading</h3>
+	<p>This is some <span class="note">important</span> text.</p>
+	
+	<h2>Multiple Classes</h2>
+	<p>HTML요소는 둘 이상의 클래스에 속할 수 있다.<br>
+	여러 클래스를 정의하려면 클래스 이름을 공백으로 구분하면 된다.(ex: div class="city main")<br>
+	요소는 지정된 모든 클래스에 따라 스타일이 지정된다.</p>
+	
+	<h4 class="country main">Korea</h4>
+	<h4 class="country asia">Japan</h4>
+	<h4 class="country asia">china</h4>
+	<h4 class="country">England</h4>
+	
+	
+	<h2>Different Elements Can Share Same Class</h2>
+	<p>다른 HTML요소는 동이란 클래스를 가리킬 수 있다.(ex: h2와 p는 동일한 "person"클래스를 가리킨다)</p>
+	
+	<h2 class="person">Aubameyang</h2>
+	<p class="person">Aubameyang is Arsenal player</p>
+	
+	
+	<h2>Use of The class Attribute in JavaScript</h2>
+	<p>클래스 이름은 JavaScript 에서 특정 요소에 대한 특정 작업을 수행하는데 사용할 수 있다.</p>
+	
+	<button onclick="myFunction()">Hide elements</button>
+	
+	<h4 class="club">Arsenal</h4>
+	<p>Arsenal is the club of London.</p>
+	<h4 class="club">Liverpool</h4>
+	<p>Liverpool is the club of Liverpool</p>
+	<h4 class="club">Manchester City</h4>
+	<p>Manchester City is the club of Manchester</p>
+	
+	<script>
+	function myFunction() {
+		var x = document.getElementsByClassName("club");
+		for(var i=0; i<x.length; i++){
+			x[i].style.display = "none";
+		}
+	}
+	</script>
+</body>
+</html>
