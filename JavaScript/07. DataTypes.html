@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Data Types</title>
+</head>
+<body>
+	<h2>JavaScript Data Types</h2>
+	<p id="num"></p>
+	<p id="str"></p>
+	<p id="obj"></p>
+	<script>
+		var num = 16; //Number
+		var str = "Hi"; //String
+		var obj = {firstName:"Kim", lastName:"SeungHyeon"}; //Object
+		
+		document.getElementById("num").innerHTML = (num)+" 의 data type : " + typeof(num);
+		document.getElementById("str").innerHTML = (str)+" 의 data type : " + typeof(str);
+		document.getElementById("obj").innerHTML = obj.firstName + obj.lastName +" 의 data type : " + typeof(obj);
+	</script>
+	
+	
+	<h2>The Concept of Data Types</h2>
+	<p>data type은 중요한 개념이다. 변수에 대해 작동할 수 있으려면 type에 대해 하는 것이 중요하다.</p>
+	<p id="test1"></p>
+	<p id="test2"></p>
+	<script>
+		var numstr = 16 + 4 + "string";
+		var strnum = "string" + 16 + 4;
+		document.getElementById("test1").innerHTML = "16 + 4 + string의 결과 : " + numstr;
+		document.getElementById("test2").innerHTML = "string + 16 + 4의 결과 : " + strnum;
+	</script>
+	
+	
+	<h2>JavaScript Types are Dynamic</h2>
+	<p>JavaScript에는 동적 유형이 있다. 즉, 동일한 변수를 사용하여 다른 데이터 유형을 보유 할 수 있다.</p>
+	<p id="test3"></p>
+	<p id="test4"></p>
+	<script>
+		var data;
+		data = 5;
+		document.getElementById("test3").innerHTML = data + " 의 data type : " + typeof(data);
+		data = "문자";
+		document.getElementById("test4").innerHTML = data + " 의 data type : " + typeof(data);
+	</script>
+	
+	
+	<h2>JavaScript Arrays</h2>
+	<p>배열 선언은 var cars = ["bmw", "benz", "volvo"] 형태로 선언한다</p>
+	<p id="test5[0]"></p>
+	<p id="test5[1]"></p>
+	<p id="test5[2]"></p>
+	<script>
+		var cars = ["bmw","benz","volvo"];
+		document.getElementById("test5[0]").innerHTML = "car[0]의 데이터 : " + cars[0];
+		document.getElementById("test5[1]").innerHTML = "car[1]의 데이터 : " + cars[1];
+		document.getElementById("test5[2]").innerHTML = "car[2]의 데이터 : " + cars[2];
+	</script>
+	
+	
+	<h2>JavaScript Objects</h2>
+	<p>Object 선언은 var person = {firstName:"Kim", lastName:"SeungHyeon", age:27, eyeColor:"black"} 형태로 선언한다</p>
+	<p id="test6.f"></p>
+	<p id="test6.l"></p>
+	<p id="test6.a"></p>
+	<p id="test6.e"></p>
+	<script>
+		var person = {firstName:"김", lastName:"승현", age:27, eyeColor:"black"};
+		document.getElementById("test6.f").innerHTML = "firstName의 데이터 : " + person.firstName;
+		document.getElementById("test6.l").innerHTML = "lastName의 데이터 : " + person.lastName;
+		document.getElementById("test6.a").innerHTML = "age의 데이터 : " + person.age;
+		document.getElementById("test6.e").innerHTML = "eyeColor의 데이터 : " + person.eyeColor;
+	</script>
+	
+
+	<h2>Undefined</h2>
+	<p>JavaScript에서 값이 없는 변수는 정의되지 않는 값을 갖는다. 유형또한 정의되지 않는다.</p>
+	<p id="test7"></p>
+	<script>
+		var car;
+		document.getElementById('test7').innerHTML = "정의되지않은 데이터 : " + car + "<br>정의되지않은 데이터타입 : " + typeof(car);
+	</script>
+	
+	
+	<h2>Empty Values</h2>
+	<p>빈 값(empty value)은 정의되지않은 값(undefined)과 다르다. 빈 값은 string유형을 갖는다.</p>
+	<p id="test8"></p>
+	<script>
+		var car = "";
+		document.getElementById('test8').innerHTML = "비어있는 값 : " + car + "<br>비어있는 값의 데이터 타입 : " + typeof(car);
+	</script>
+	
+	
+	<h2>Null</h2>
+	<p>JavaScript에서 null은 "nothing"이다. 그것은 존재하지 않는 값이다.<br>
+	null의 데이터 유형은 객체이다. null을 통해 객체를 비울 수 있다.</p>
+	<p id="test9"></p>
+	<script>
+		var person = {firstName:"김", lastName:"승현", age:27, eyeColor:"black"};
+		person = null;
+		document.getElementById('test9').innerHTML = "person의 데이터 타입 : " + typeof person;
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS Selectors</title>
+<style>
+	div {
+		text-align: center;
+		color: red;
+	}
+	#para2 {
+		text-align: center;
+		color: red;
+	}
+	.center {
+		text-align: center;
+		color: red;
+	}
+	p.center {
+		color:blue;
+	}
+</style>
+</head>
+<body>
+	<h2>CSS Selectors</h2>
+	<p>CSS selectors는 스타일을 지정할 HTML 요소를 찾거나 선택하는데 사용된다.</p>
+	<p><b>CSS selectors five categories</b></p>
+	<ul>
+		<li>Simple selectors(이름, ID, 클래스를 기준으로 요소 선택)</li>
+		<li><a href="https://www.w3schools.com/css/css_combinators.asp">Combinator selectors</a>(특정 관계에 따라 요소 선택)</li>
+		<li><a href="https://www.w3schools.com/css/css_pseudo_classes.asp">Pseudo-class selectors</a>(특정 상태에 따라 요소 선택)</li>
+		<li><a href="https://www.w3schools.com/css/css_pseudo_elements.asp">Pseudo-elements selectors</a>(요소의 일부 선택 및 스타일 지정)</li>
+		<li><a href="https://www.w3schools.com/css/css_attribute_selectors.asp">Attribute selectors</a>(속성 또는 속성 값에 따라 요소 선택)</li>
+	</ul>
+	
+	<h2>The CSS element Selector</h2>
+	<p>element selector는 요소 이름을 기반으로 HTML 요소를 선택한다.</p>
+	<div>Every paragraph will be affected by the style.</div>
+	<div id="para1">Me too!</div>
+	<div>And me!</div>
+	
+	
+	<h2>The CSS id Selector</h2>
+	<p>id selector는 id속성을 사용하여 특정 요소를 선택한다.</p>
+	<pre id="para2">Hello World!</pre>
+	<pre>This paragraph is not affected by the style.</pre>
+	
+	
+	<h2>The CSS class Selector</h2>
+	<p>class selector는 .을 이용하여 요소를 선택한다<br>
+	element selector와 결합하여 사용할 수 있다</p>
+	<h4 class="center">This heading is center class</h4>
+	<p class="center">This paragraph is center class</p>
+	
+	<h2>The CSS Universal Selector - <a href="example/UniversalSelector_ex.html" style="font-size:18px">예제</a></h2>
+	<p>*로 감싸주면 모든 요소가 선택되어 CSS가 적용된다</p>
+	
+	<h2>The CSS Grouping Selector - <a href="example/GroupingSelector_ex.html" style="font-size:18px">예제</a></h2>
+	<p>h1,h2,p 같이 동시에 묶어서 적용할 수도 있다.
+</body>
+</html>

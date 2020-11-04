@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Output</title>
+</head>
+<body>
+	<h2>JavaScript Display Possibilites</h2>
+	<p>JavaScript에서는 다양한 방식으로 출력할 수 있다.</p>
+	<ul>
+		<li>innerHTML</li>
+		<li>document.write()</li>
+		<li>window.alert()</li>
+		<li>console.log()</li>
+	</ul>
+	
+	<h2>Using innerHTML</h2>
+	<p>document.getElementById('id').innerHTML = 5 + 6;</p>
+	<p id='innerHTML'></p>
+	<script>
+	document.getElementById('innerHTML').innerHTML = 5 + 6;
+	</script>
+	
+	<h2>Using document.write()</h2>
+	<p>document.write(5 + 6);</p>
+	<script>
+	document.write(5 + 6);
+	</script>
+	<p>&lt;button type="button" onclick="document.write(5 + 6)"&gt;Try it&lt;/button&gt;</p>
+	<button type="button" onclick="document.write(5 + 6)">Try it</button>
+	
+	<h2>Using window.alert()</h2>
+	<p>window.alert(5 + 6)<br>
+	window 생략가능<br>
+	alert("alert")</p>
+	<script>
+	window.alert("window alert")
+	alert("alert")
+	</script>
+	
+	<h2>Using console.log()</h2>
+	<p>console.log() 는 디버깅할때 사용됨</p>
+	<script>
+	console.log(5 + 6);
+	</script>
+	
+	<h2>JavaScript Print</h2>
+	<p>window.print()는 현재 페이지를 출력할 수 있게 해줌</p>
+	<button onclick="window.print()">Print this page</button>
+</body>
+</html>
