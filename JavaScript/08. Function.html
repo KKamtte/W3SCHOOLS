@@ -14,6 +14,74 @@
 	<div style="border:10px solid powderblue;"><span style="color:blue">function</span> name(parameter1, parameter2, parameter3) {<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;<i style="color:green">// code to be executed</i><br>
 	}</div>
+	
+	
+	<h2>Function Invocation</h2>
+	<p>함수 내부의 코드는 함수를 호출할때 실행이 된다</p>
+	<ul>
+		<li>이벤트 발생시(사용자 버튼 클릭시))</li>
+		<li>JavaScript코드에서 호출되는 경우</li>
+		<li>자동(자체)호출</li>
+	</ul>
+	
+	
+	<h2>Function Return</h2>
+	<p>JavaScript가 return 문에 도달하면 함수 실행이 중지된다.<br>
+	함수가 명령문에서 호출 된 경우 JavaScript는 호출 명령문 다음에 코드를 실행하기 위해 return을 한다.<br>
+	함수는 종종 return 값을 계산하고 return 값은 발신자에게 return 된다.</p>
+	<p id="test1"></p>
+	<script>
+		var x = myFunction(4,3);
+		document.getElementById('test1').innerHTML = x;
+		function myFunction(a,b) {
+			return a * b;
+		}
+	</script>
+	
+	
+	<h2>The () Operator Invokers the Function</h2>
+	<p>() 없이 함수를 액세스하면 함수 결과 대신 함수 객체가 반환된다.</p>
+	<p id="test2"></p>
+	<script>
+		function toCelsius(f) {
+			return (5/9) * (f-32);
+		}
+		document.getElementById('test2').innerHTML = toCelsius;
+	</script>
+	
+	
+	<h2>Function Used as Variable Values</h2>
+	<p>함수는 모든 유형의 공식, 할당 및 계산에서 변수를 사용하는 것과 동일한 방식으로 사용될 수 있다.</p>
+	<p id="test3"></p>
+	<script>
+		document.getElementById('test3').innerHTML = "The temperature is " + toCelsius(77) + " Celsius";
 		
+		function toCelsius(fahrenheit) {
+			return (5/9) * (fahrenheit-32);
+		}
+	</script>
+	
+	
+	<h2>Local Variables</h2>
+	<p>JavaScript 함수 내에서 선언된 변수는 함수에 대해 지역변수가 된다.<br>
+	지역 변수는 함수 내에서만 접근가능하다.</p>
+	
+	
+	<p id="test4"></p>
+	
+	<p id="test5"></p>
+	
+	<p id="test6"></p>
+	<script>
+		myFunction();
+		
+		function myFunction() {
+			var carName = "Volvo";
+			carStyle = "sportCar";
+			document.getElementById("test4").innerHTML = typeof carName + " " + carName;
+		}
+		document.getElementById("test5").innerHTML = typeof carName;
+		document.getElementById("test6").innerHTML = typeof carStyle + " " + carStyle;
+	</script>
 </body>
 </html>

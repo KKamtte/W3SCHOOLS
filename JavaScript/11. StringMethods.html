@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript String Methods</title>
+</head>
+<body>
+	<h2>String Length</h2>
+	<p>length 는 문자열의 길이를 출력해준다</p>
+	<p id="length1"></p>
+	<p id="length2"></p>
+	<script>
+		var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		var sln = txt.length;
+		document.getElementById('length1').innerHTML = "텍스트 : " + txt;
+		document.getElementById('length2').innerHTML = "텍스트길이 : " + sln;
+	</script>
+	
+	
+	<h2>Finding a String in a String</h2>
+	<p>indexOf() 는 문자열에서 지정된 텍스트의 첫 번째 위치를 반환한다.</p>
+	<p id="index1"></p>
+	<p id="index2"></p>
+	<p id="index3"></p>
+	<script>
+		var str = "Please locate where 'locate' occurs!";
+		var txt = "locate";
+		var pos = str.indexOf(txt);
+		document.getElementById('index1').innerHTML = "문자열 : " + str;
+		document.getElementById('index2').innerHTML = "찾는문자 : " + txt;
+		document.getElementById('index3').innerHTML = "위치 : " + pos;
+	</script>
+	<p>lastIndexOf() 는 문자열에서 지정된 텍스트의 마지막 위치를 반환한다.</p>
+	<p id="indexlast1"></p>
+	<p id="indexlast2"></p>
+	<p id="indexlast3"></p>
+	<script>
+		var pos = str.lastIndexOf(txt);
+		document.getElementById('indexlast1').innerHTML = "문자열 : " + str;
+		document.getElementById('indexlast2').innerHTML = "찾는문자 : " + txt;
+		document.getElementById('indexlast3').innerHTML = "위치 : " + pos;
+	</script>
+	<p>만약 해당하는 문자를 찾지 못한 경우 -1을 반환한다.</p>
+	<p id="indexnofind1"></p>
+	<p id="indexnofind2"></p>
+	<p id="indexnofind3"></p>
+	<script>
+		var pos = str.indexOf("John");
+		document.getElementById('indexnofind1').innerHTML = "문자열 : " + str;
+		document.getElementById('indexnofind2').innerHTML = "찾는문자 : " + "John";
+		document.getElementById('indexnofind3').innerHTML = "위치 : " + pos;
+	</script>
+	<p>두 번째 파라미터에 숫자를 넣으면 해당 지점부터 찾는 것을 시작한다.</p>
+	<p id="index4"></p>
+	<p id="index5"></p>
+	<p id="index6"></p>
+	<script>
+		var pos = str.indexOf(txt, 15);
+		document.getElementById('index4').innerHTML = "문자열 : " + str;
+		document.getElementById('index5').innerHTML = "찾는문자 : " + txt;
+		document.getElementById('index6').innerHTML = "위치 : " + pos;
+	</script>
+	
+	
+	<h2>Searching for a String in a String</h2>
+	<p>search() 는 문자열에서 지정된 값을 검색하고 일치하는 위치를 반환한다.</p>
+	<p id="search1"></p>
+	<p id="search2"></p>
+	<p id="search3"></p>
+	<script>
+		pos = str.search(txt);
+		document.getElementById('search1').innerHTML = "문자열 : " + str;
+		document.getElementById('search2').innerHTML = "찾는문자 : " + txt;
+		document.getElementById('search3').innerHTML = "위치 : " + pos;
+	</script>
+	
+	<h3>indexOf() 와 search()의 차이점</h3>
+	<ul>
+		<li>search() 메소드는 두번째 시작 위치 인수를 사용할 수 없다.</li>
+		<li>indexOf() 메소드는 정규식을 사용할 수 없다.</li>
+	</ul>
+</body>
+</html>

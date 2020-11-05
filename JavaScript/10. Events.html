@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Events</title>
+<style>
+	table {
+		border-collapse:collapse;
+		width: 100%;
+	}
+	td,th {
+		border: 1px solid #dddddd;
+		padding: 8px;
+	}
+	tr:nth-child(even) {
+		background-color : #dddddd;
+	}
+</style>
+</head>
+<body>
+	<h2>HTML Events</h2>
+	<p>HTML 이벤트는 브라우저가 수행하는 작업이거나 사용자가 수행하는 작업일 수 있다.</p>
+	<ul>
+		<li>HTML 웹페이지 로드</li>
+		<li>HTML 입력 필드 변경</li>
+		<li>HTML 버튼 클릭</li>
+	</ul>
+	<p>JavaScript를 사용하면 이런 이벤트가 감지될 때 코드를 실행할 수 있다.<br>
+	HTML은 JavaScript와 함께 이벤트 핸들러 속성을 추가할 수 있다.</p>
+	
+	<button onclick="document.getElementById('test1').innerHTML = Date()">현재 시각</button>
+	<p id="test1"></p>
+	<p><button onclick="this.innerHTML=Date()">현재시각으로 바꿔주는 버튼</button></p>
+	<button onclick="displayDate()">함수 이용</button>
+	<script>
+		function displayDate() {
+			document.getElementById("test2").innerHTML = Date();
+		}
+	</script>
+	<p id="test2"></p>
+	
+	<h2>Common HTML Events</h2>
+	<table>
+		<tr>
+			<th>Event</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>onchange</td>
+			<td>HTML요소 변경</td>
+		</tr>
+		<tr>
+			<td>onclick</td>
+			<td>사용자가 HTML요소 클릭</td>
+		</tr>
+		<tr>
+			<td>onmouseover</td>
+			<td>사용자가 마우스가 HTML요소 위로 이동</td>
+		</tr>
+		<tr>
+			<td>onmouseout</td>
+			<td>사용자가 HTML요소에서 마우스를 멀리 이동</td>
+		</tr>
+		<tr>
+			<td>onkeydown</td>
+			<td>사용자가 키보드를 누름</td>
+		</tr>
+		<tr>
+			<td>onload</td>
+			<td>브라우저가 페이지로드 완료</td>
+		</tr>
+	</table>
+	
+	<p>다양한 HTML Event : <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">W3Schools JavaScript Reference HTML DOM Events</a>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Objects</title>
+</head>
+<body>
+	<h2>Real Life Objects, Properties, and Methods</h2>
+	<p>실생활에서 자동차는 객체이다.<br>
+	자동차에는 무게 및 색상과 같은 속성과 시작 및 중지와 같은 방법이 있다.
+	<table border="1px">
+		<tr>
+			<th>Object(객체)</th>
+			<th>Properties(속성)</th>
+			<th>Methods(메소드)</th>
+		</tr>
+		<tr>
+			<td><img src="img/car.gif"/></td>
+			<td>car.name = Fiat<br><br>
+				car.model = 500<br><br>
+				car.weight = 850kg<br><br>
+				car.color = white<br><br>
+			</td>
+			<td>car.start()<br><br>
+				car.drive()<br><br>
+				car.brake()<br><br>
+				car.stop()<br><br>
+			</td>
+		</tr>
+	</table>
+	<p>모든 자동차는 동일한 속성을 갖지만 속성 값은 자동차 마다 다르다.<br>
+	모든 자동차에는 동일한 메소드가 있지만 다른 시간에 수행된다.</p>
+	
+	<h2>JavaScript Objects</h2>
+	<p>name:value 를 통해 객체의 속성을 기록할 수 있다.</p>
+	<p id="test1"></p>
+	<script>
+		//Create an object:
+		var car = {type:"Fiat", model:"500", color:"white"};
+	
+		//display some data from object:
+		document.getElementById("test1").innerHTML = "The car type is " + car.type;
+	</script>
+	
+	<h2>Accessing Object Properties</h2>
+	<p>객체 접근하는 방식에는 두 가지 방법이 있다.</p>
+	<ul>
+		<li>objectName.propertyName</li>
+		<li>objectName.["propertyName"]</li>
+	</ul>
+</body>
+</html>
