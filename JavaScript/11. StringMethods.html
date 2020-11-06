@@ -79,5 +79,187 @@
 		<li>search() 메소드는 두번째 시작 위치 인수를 사용할 수 없다.</li>
 		<li>indexOf() 메소드는 정규식을 사용할 수 없다.</li>
 	</ul>
+	
+	
+	<h2>Extracting String Parts</h2>
+	<p>문자열의 일부를 추출하는 방법에는 세 가지가 있다.</p>
+	<ul>
+		<li>slice(start, end)</li>
+		<li>substring(start, end)</li>
+		<li>substr(start, length)</li>
+	</ul>
+	
+	
+	<h2>The slice() Method</h2>
+	<p>slice()는 문자열의 일부를 추출하고 추출 된 부분을 새 문자열로 반환한다.<br>
+	이 메소드는 시작위치와 끝위치 두개의 메소드를 받는다</p>
+	<p id="slice1"></p>
+	<p id="slice2"></p>
+	<script>
+		var str = "Apple, Banana, Kiwi";
+		var res = str.slice(7,13); //Banana글자 추출
+		document.getElementById('slice1').innerHTML = "예제 문자열 : " + str;
+		document.getElementById('slice2').innerHTML = "slice(7,13) : " + res;
+	</script>
+	<p>시작위치만 적게 되면 끝 위치는 자동으로 문자열의 끝까지 반환된다.</p>
+	<p id="slice3"></p>
+	<script>
+		var res = str.slice(7); //banana, kiwi
+		document.getElementById('slice3').innerHTML = "slice(7) : " + res;
+	</script>
+	
+	
+	<h2>The substring() Method</h2>
+	<p>substring()은 slice()와 비슷하지만 음수 인덱스를 허용하지 않는다.</p>
+	<p id="substring1"></p>
+	<script>
+		var res = str.substring(7, 13);
+		document.getElementById('substring1').innerHTML = "substring(7, 13) : " + res;
+	</script>
+	
+	
+	<h2>The substr() Method</h2>
+	<p>substr()은 두번째 매개변수가 추출된 부분의 길이를 지정한다.</p>
+	<p id="substr1"></p>
+	<script>
+		var res = str.substr(7,6);
+		document.getElementById('substr1').innerHTML = "substr(7,6) : " + res;
+	</script>
+	
+	
+	<h2>Replacing String Content</h2>
+	<p>replace()는 메소드의 지정된 문자를 다른 값으로 바꿔준다.</p>
+	<p id="replace1"></p>
+	<p id="replace2"></p>
+	<p id="replace3"></p>
+	<script>
+		var str = "Please visit Microsoft!";
+		document.getElementById('replace1').innerHTML = "원본 문자열 : " + str;
+		var n = str.replace('Microsoft', 'W3Schools');
+		document.getElementById('replace2').innerHTML = "함수 입력 : replace('Microsoft','W3Schools')";
+		document.getElementById('replace3').innerHTML = "변경된문자열 : " + n;
+	</script>
+	<p>대소문자를 구분하지 않으려면 정규식에 /i 플래그(비 구분)와 함께 사용하면 된다.</p>
+	<p id="replace4"></p>
+	<p id="replace5"></p>
+	<script>
+		var n = str.replace(/MICROSOFT/i, "W3Schools");
+		document.getElementById('replace4').innerHTML = "함수 입력 : repace(/MICROSOFT/i, 'W3Schools')";
+		document.getElementById('replace5').innerHTML = "변경된 문자열 : " + n;
+	</script>
+	<p>모든 일치 항목을 바꾸려면 정규식을 /g 플래그(전역일치)와 함께 사용하면 된다.</p>
+	<p id="replace6"></p>
+	<p id="replace7"></p>
+	<p id="replace8"></p>
+	<p id="replace9"></p>
+	<p id="replace10"></p>
+	<script>
+		var str = "Please visit Microsoft and Microsoft!";
+		document.getElementById('replace6').innerHTML = "원본 문자열 : " + str;
+		var n = str.replace('Microsoft', 'W3Schools');
+		document.getElementById('replace7').innerHTML = "함수 입력 : replace('Microsoft','W3Schools')";
+		document.getElementById('replace8').innerHTML = "변경된문자열 : " + n;
+		n = str.replace(/Microsoft/g, 'W3Schools');
+		document.getElementById('replace9').innerHTML = "함수 입력 : replace(/Microsoft/g,'W3Schools')";
+		document.getElementById('replace10').innerHTML = "변경된문자열 : " + n;
+	</script>
+	<p>다양한 정규 표현식 <a href="https://www.w3schools.com/js/js_regexp.asp">JavaScript Regular Expressions</a>
+
+
+	<h2>Converting to Upper and Lower Case</h2>
+	<p>문자열을 대문자로 바꾸려면 toUpperCase(), 소문자로 바꾸려면 toLowerCase()를 사용하면 된다.</p>
+	<p id="upper1"></p>
+	<p id="upper2"></p>
+	<p id="upper3"></p>
+	<p id="lower2"></p>
+	<p id="lower3"></p>
+	<script>
+		var text1 = "Hello World!";
+		document.getElementById('upper1').innerHTML = "초기 문자열 : " + text1;
+		var text2 = text1.toUpperCase();
+		document.getElementById('upper2').innerHTML = "함수 입력 : text1.toUpperCase()";
+		document.getElementById('upper3').innerHTML = "변경된 문자열 : " + text2;
+		var text3 = text1.toLowerCase();
+		document.getElementById('lower2').innerHTML = "함수 입력 : text1.toLowerCase()";
+		document.getElementById('lower3').innerHTML = "변경된 문자열 : " + text3;
+	</script>
+	
+	
+	<h2>The concat() Method</h2>
+	<p>concat()은 두 개 이상의 문자를 합쳐준다.</p>
+	<p id="concat1"></p>
+	<p id="concat2"></p>
+	<p id="concat3"></p>
+	<p id="concat4"></p>
+	<p id="concat5"></p>
+	<p id="concat6"></p>
+	<script>
+		var text1 = "Hello";
+		var text2 = "World";
+		document.getElementById('concat1').innerHTML = "초기문자열1(text1) : " + text1;
+		document.getElementById('concat2').innerHTML = "초기문자열2(text2) : " + text2;
+		var text3 = text1.concat(" ", text2);
+		document.getElementById('concat3').innerHTML = "함수입력 : text1.concat(' ', text2)";
+		document.getElementById('concat4').innerHTML = "변경된 문자열 : " + text3;
+		var text4 = "Hi".concat(" ", "JavaScript");
+		document.getElementById('concat5').innerHTML = "함수입력 : Hi.concat(' ', 'JavaScript')";
+		document.getElementById('concat6').innerHTML = "변경된 문자열 : " + text4;
+	</script>
+	
+	
+	<h2>String.trim()</h2>
+	<p>trim() 메소드는 공백을 지워준다.</p>
+	<pre id="trim1"></pre>
+	<pre id="trim2"></pre>
+	<pre id="trim3"></pre>
+	<script>
+		var str = "      Hello World!      ";
+		document.getElementById('trim1').innerHTML = "초기문자열 : " + str;
+		var trim = str.trim();
+		document.getElementById('trim2').innerHTML = "함수입력 : str.trim()";
+		document.getElementById('trim3').innerHTML = "변경된 문자열 : " + trim;
+	</script>
+	
+	
+	<h2>The charAt() Method</h2>
+	<p>charAt() 메소드는 해당 위치의 문자열을 반환한다.</p>
+	<p id="charat1"></p>
+	<p id="charat2"></p>
+	<p id="charat3"></p>
+	<script>
+		var str = "AMAZING WORLD";
+		document.getElementById('charat1').innerHTML = "문자열 : " + str;
+		document.getElementById('charat2').innerHTML = "함수입력 : str.charAt(0)";
+		document.getElementById('charat3').innerHTML = "반환된 문자 : " + str.charAt(0);
+	</script>
+	
+	
+	<h2>The charCodeAt() Method</h2>
+	<p>charCodeAt() 메소드는 해당 위치 문자의 아스키코드값을 반환한다.</p>
+	<p id="charcode1"></p>
+	<p id="charcode2"></p>
+	<p id="charcode3"></p>
+	<script>
+		var str = "AMAZING WORLD";
+		document.getElementById('charcode1').innerHTML = "문자열 : " + str;
+		document.getElementById('charcode2').innerHTML = "함수입력 : str.charCodeAt(0)";
+		document.getElementById('charcode3').innerHTML = "반환된 문자 : " + str.charCodeAt(0);
+	</script>
+	
+	
+	<h2>Converting a String to an Array</h2>
+	<p>split() 메소드는 문자열을 배열로 변환시킨다.</p>
+	<p id="split1"></p>
+	<p id="split2"></p>
+	<p id="split3"></p>
+	<p id="split4"></p>
+	<script>
+		var txt = "a,b,c,d,e";
+		document.getElementById('split1').innerHTML = "문자열 : " + txt;
+		var arr = txt.split(",");
+		document.getElementById('split2').innerHTML = "함수입력 : txt.split(',')";
+		document.getElementById('split3').innerHTML = "배열호출 : arr[1]";
+		document.getElementById('split4').innerHTML = "반환된 문자 : " + arr[1];
+	</script>
 </body>
 </html>

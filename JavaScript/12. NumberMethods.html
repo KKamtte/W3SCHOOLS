@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Number Methods</title>
+</head>
+<body>
+	<h2>The toString() Method</h2>
+	<p>toString 메소드는 숫자를 문자열로 반환한다.</p>
+	<p id="tostring"></p>
+	<script>
+		var x = 123;
+		document.getElementById("tostring").innerHTML = "현재 타입 : " + typeof x + 
+			"<br>변경된 타입 : " + typeof x.toString();
+	</script>
+	
+	
+	<h2>Hexadecimal</h2>
+	<p>JavaScript는 숫자를 10진수로 표현한다.<br>
+	toString()메소드를 사용하여 2진법에서 36진법으로 숫자출력을 할 수 있게 변환한다.</p>
+	<p id="hexa"></p>
+	<script>
+		var myNumber = 32;
+		document.getElementById('hexa').innerHTML = "10진수 32의 표현법" +
+			"<br>10진수 표현 : " + myNumber.toString(10) +
+			"<br>32진수 표현 : " + myNumber.toString(32) +
+			"<br>16진수 표현 : " + myNumber.toString(6) +
+			"<br>8진수 표현 : " + myNumber.toString(8) +
+			"<br>2진수 표현 : " + myNumber.toString(2);
+	</script>
+	
+	
+	<h2>The toExponential() Method</h2>
+	<p>toExponential()은 지수 표기법을 사용하여 반올림되고 기록 된 숫자가 있는 문자열을 반환한다.<br>
+	매개변수는 소수점 뒤의 문자 수를 정의한다.</p>
+	<p id="expo1"></p>
+	<p id="expo2"></p>
+	<p id="expo3"></p>
+	<script>
+		document.getElementById("expo1").innerHTML = "파이 값 : " + Math.PI;
+		document.getElementById("expo2").innerHTML = "파이 값(2자리까지) : " + Math.PI.toExponential(2);
+		document.getElementById("expo3").innerHTML = "파이 값(4자리까지) : " + Math.PI.toExponential(4);
+	</script>
+	
+	<h2>The toFixed() Method</h2>
+	<p>toFixed()는 지정된 소수자릿수로 쓰여진 숫자가 있는 문자열을 반환한다.</p>
+	<p id="fix1"></p>
+	<p id="fix2"></p>
+	<script>
+		document.getElementById("fix1").innerHTML = "파이의 두번째 소수 : " + Math.PI.toFixed(2);
+		document.getElementById("fix2").innerHTML = "파이의 네번째 소수 : " + Math.PI.toFixed(4);
+	</script>
+	
+	<h2>Converting Variables to Numbers</h2>
+	<p>변수를 숫자로 변환하는데 사용할 수 있는 3가지 JavaScript 메소드가 있다.</p>
+	<ul>
+		<li>Number() - 인수에서 변환된 숫자를 반환</li>
+		<li>parseFloat() - 인수를 구문분석하고 부동 소수점 숫자를 반환</li>
+		<li>parseInt() - 인수를 구문분석하고 정수를 반환</li>
+	</ul>
+	
+	<h2>Number Properties</h2>
+	<ul>
+		<li>MAX_VALUE - JavaScript에서 가능한 가장 큰 수 반환</li>
+		<li>MIN_VALUE - JavaScript에서 가능한 가장 작은 수 반환</li>
+		<li>POSITIVE_INFINITY - 무한대를 나타낸다</li>
+		<li>NEGATIVE_INFINITY - 음의 무한대를 나타낸다</li>
+		<li>NaN - Not-a-Number 값을 나타낸다</li>
+	</ul>
+</body>
+</html>
