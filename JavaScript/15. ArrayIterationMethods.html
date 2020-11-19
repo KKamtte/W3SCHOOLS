@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array Iteration Methods</title>
+</head>
+<body>
+    <h2>Array.forEach()</h2>
+    <p>forEach() 메소드는 각 배열 요소에 대해 한 번씩 함수를 호출한다.</p>
+    <p id="foreach"></p>
+    <script>
+        var txt = "";
+        var numbers= [45, 4, 9, 16, 25];
+        numbers.forEach(foreach);
+        document.getElementById("foreach").innerHTML = txt;
+
+        function foreach(value, index, array) {
+            txt = txt + "array : "+ array + " index : "+index + " value :"+value + "<br>";
+        }
+    </script>
+
+    <h2>Array.map()</h2>
+    <p>map() 메소드는 각 배열요소에 대해 함수를 수행하여 새 배열을 만든다.<br>
+    map() 메소드는 값이 없는 배열 요소에 대해 함수를 실행하지 않는다.<br>
+    원래 배열을 변경하지 않는다.</p>
+    <p id="map1"></p>
+    <p id="map2"></p>
+    <script>
+        var number1 = [45, 4, 9, 16, 25];
+        var number2 = number1.map(map);
+        document.getElementById("map1").innerHTML = number1.toString();
+        document.getElementById("map2").innerHTML = number2;
+
+        function map(value) {
+            return value * 2;
+        }
+    </script>
+
+    <h2>Array.filter()</h2>
+    <p>filter() 메소드는 조건에 부합하는 요소로 새 배열을 만든다.</p>
+    <p id="filter1"></p>
+    <p id="filter2"></p>
+    <p id="filter3"></p>
+    <script>
+        var number = [3, 5, 9, 10, 25, 27, 39];
+        var div5 = number.filter(div);
+        var over20 = number.filter(over);
+        document.getElementById("filter1").innerHTML = "배열 : " + number.toString();
+        document.getElementById("filter2").innerHTML = "5의 배수 : " + div5;
+        document.getElementById("filter3").innerHTML = "20보다 큰 수 : " + over20;
+
+        function div(value) {
+            return value%5==0;
+        }
+        function over(value) {
+            return value > 20;
+        }
+    </script>
+
+    <h2>Array.reduce()</h2>
+    <p>reduce() 메소드는 각 배열 요소에서 함수를 실행하여 단일 값을 생성한다.<br>
+    reduce() 메소드는 배열의 왼쪽에서 오른쪽으로 작동한다.
+    </p>
+    <p id="reduce1"></p>
+    <p id="reduce2"></p>
+    <p id="reduce3"></p>
+    <p id="reduce4"></p>
+    <script>
+        var number = [45, 4, 9, 16, 25];
+        var sum = number.reduce(redu);
+        var numbers = ["김", "승", "현"];
+        var fullname = numbers.reduce(redu);
+        document.getElementById("reduce1").innerHTML = "배열 : " + number.toString();
+        document.getElementById("reduce2").innerHTML = "합계 : " + sum;
+        document.getElementById("reduce3").innerHTML = "이름배열 : " + numbers.toString();
+        document.getElementById("reduce4").innerHTML = "풀네임 : " + fullname;
+
+        function redu(total, value){
+            return total + value;
+        }
+    </script>
+    <p>reduce() 메소드는 초기값을 받을 수 있다.</p>
+    <p id="reduce5"></p>
+    <script>
+        sum100 = number.reduce(redu, 100);
+        document.getElementById("reduce5").innerHTML = "초기값 100추가 : " + sum100;
+    </script>
+
+    <h2>Array.every()</h2>
+    <p>every() 메소드는 모든 배열의 값이 테스트를 통과하는지 확인한다.(True, False 반환)</p>
+    <p id="every1"></p>
+    <p id="every2"></p>
+    <p id="every3"></p>
+    <script>
+        var number = [5, 10, 15, 20, 25, 30];
+        var div5 = number.every(div);
+        var over20 = number.every(over);
+        document.getElementById("every1").innerHTML = "배열 요소 : " + number.toString();
+        document.getElementById("every2").innerHTML = "모두 5의 배수인가 : " + div5;
+        document.getElementById("every3").innerHTML = "모두 20보다 큰가 : " + over20;
+    </script>
+
+    <h2>Array.some()</h2>
+    <p>some() 메소드는 일부 배열의 값이 테스트를 통과하는지 확인한다.(True, False 반환)</p>
+    <p id="some"></p>
+    <script>
+        var over20 = number.some(over);
+        document.getElementById("some").innerHTML = "몇몇은 20보다 큰가 : " + over20;
+    </script>
+
+    <h2>Array.indexOf()</h2>
+    <p>indexOf() 메소드는 배열에서 요소 값을 검색하고 해당 위치를 반환한다.(앞에서부터 진행)</p>
+    <p id="index1"></p>
+    <p id="index2"></p>
+    <script>
+       var fruits = ["Apple", "Orange", "Apple", "Mango"];
+       document.getElementById("index1").innerHTML = "배열 요소 : " + fruits.toString();
+       document.getElementById("index2").innerHTML = "Apple의 위치 : " + fruits.indexOf("Apple"); 
+    </script>
+
+    <h2>Array.lastIndexOf()</h2>
+    <p>lastIndexOf() 메소드는 배열의 뒤 부터 요소 값을 검색하고 해당 위치를 반환한다.</p>
+    <p id="lastindex"></p>
+    <script>
+        document.getElementById("lastindex").innerHTML = "Apple의 위치 : " + fruits.lastIndexOf("Apple");
+    </script>
+
+    <h2>Array.find()</h2>
+    <p>find() 메소드는 테스트 함수를 통과하는 첫 번째 배열 요소의 값을 반환한다.</p>
+    <p id="find1"></p>
+    <p id="find2"></p>
+    <script>
+        document.getElementById("find1").innerHTML = "배열 요소 : " + number;
+        document.getElementById("find2").innerHTML = "20보다 큰 요소 : " + number.find(over);
+    </script>
+
+    <h2>Array.findIndex()</h2>
+    <p>findIndex() 메소드는 배열 요소의 위치를 반환한다.</p>
+    <p id="findIndex"></p>
+    <script>
+        document.getElementById("findIndex").innerHTML = "20보다 큰 요소의 위치 : " + number.findIndex(over);
+    </script>
+</body>
+</html>

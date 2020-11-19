@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Date Formats</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        #t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+        
+        #t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        
+        #t01 th {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript Date Input</h2>
+    <p>일반적으로 3가지 유형의 JavaScript 날짜 입력 형식이 있다.</p>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>ISO Date</td>
+            <td>"2015-03-25" (The International Standard)</td>
+        </tr>
+        <tr>
+            <td>Short Date</td>
+            <td>"03/25/2015"</td>
+        </tr>
+        <tr>
+            <td>Long Date</td>
+            <td>"Mar 25 2015" or "25 Mar 2015"</td>
+        </tr>
+    </table>
+    <p>ISO 형식은 JavaScript의 엄격한 표준을 따른다.<br>
+    다른 형식은 잘 정의되어 있지 않으며 브라우저에 따라 다를 수 있다.</p>
+
+    <h2>JavaScript Date Output</h2>
+    <p>입력 형식과 관계없이 JavaScript는 전체 텍스트 문자열 형식으로 날짜를 출력한다.</p>
+    <script>
+        document.write(new Date());
+    </script>
+
+    <h2>JavaScript ISO Dates</h2>
+    <p>ISO 8601은 날짜 및 시간표현에 대한 국제 표준이다.<br>
+    ISO 8601 구문(YYYY-MM-DD)도 선호되는 JavaScript 날짜 형식이다.</p>
+    <script>
+        document.write(new Date("2020-11-19"));
+    </script>
+
+    <h2>ISO Dates (Year and Month)</h2>
+    <p>ISO 날짜는 날짜(YYYY-MM)를 지정하지 않고 쓸 수 있다.</p>
+    <script>
+        document.write(new Date("2020-11"));
+    </script>
+
+    <h2>ISO Dates (Only Year)</h2>
+    <p>ISO 날짜는 월과 일(YYYY)없이 작성할 수 있다.</p>
+    <script>
+        document.write(new Date("2020"));
+    </script>
+
+    <h2>ISO Dates (Date-Time)</h2>
+    <p>ISO 날짜는 추가 된 시간, 분 및 초(YYYY-MM-DDTHH:MM:SSZ)로 작성 할 수 있다.</p>
+    <script>
+        document.write(new Date("2020-11-19T16:59:32Z"));
+    </script>
+    <p>날짜와 시간은 대문자 T로 구분된다.<br>
+    UTC시간은 대문자 Z로 정의된다.<br>
+    UTC를 기준으로 시간을 수정하려면 Z를제거하고 대신 +HH:MM또는 -HH:MM을 추가한다.</p>
+    <script>
+        document.write(new Date("2020-11-19T16:59:32+09:00"));
+    </script>
+
+    <h2>Time Zones</h2>
+    <p>시간대를 지정하지 않고 날짜를 설정할 때 JavaScript는 브라우저의 시간대를 사용한다.<br>
+    시간대를 지정하지 않고 날짜를 가져오면 결과가 브라우저의 시간대로 변환된다.</p>
+
+    <h2>JavaScript Short Dates</h2>
+    <p>짧은 날짜는 "MM/DD/YYYY"구문으로 작성된다.</p>
+    <script>
+        document.write(new Date("11/19/2020"));
+    </script>
+
+    <h2>JavaScript Long Dates</h2>
+    <p>긴 날짜는 "MMM DD YYYY"구문으로 작성된다.</p>
+    <script>
+        document.write(new Date("Nov 19 2020"));
+    </script>
+
+    <h2>Date Input - Parsing Dates</h2>
+    <p>유효한 날짜 문자열이 있는 경우 Date.parse() 메소드를 사용하여 밀리초로 변환할 수 있다.<br>
+    Date.parse()는 날짜와 1970년 1월 1일 사이의 밀리 초 수를 반환한다.</p>
+    <script>
+        document.write(Date.parse("November 19, 2020")+"<br>");
+        document.write(Date.parse(new Date()));
+    </script>
+</body>
+</html>
