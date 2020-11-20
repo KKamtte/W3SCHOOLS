@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Errors - Throw and Try to Catch</title>
+</head>
+<body>
+    <p>try 문을 사용하여 코드 블록에서 오류를 테스트 할 수 있다.<br>
+    catch 문을 사용하여 오류를 처리할 수 있다.<br>
+    throw 문을 사용하여 사용자 지정 오류를 만들 수 있다.<br>
+    finally 문을 사용하면 결과에 관계없이 try 및 catch 후에 코드를 실행 할 수 있다.</p>
+
+    <h2>Errors Will Happen!</h2>
+    <p>JavaScript 코드를 실행할 때 다양한 오류가 발생할 수 있다.</p>
+    <p id="error1"></p>
+    <script>
+        try {
+            error("Welcome guest!");
+        } catch(err) {
+            document.getElementById("error1").innerHTML = err.message;
+        }
+    </script>
+
+    <h2>JavaScript try and catch</h2>
+    <p>try 문을 사용하면 실행되는 동안 오류를 테스트할 코드 블록을 정의 할 수 있다.<br>
+    catch 문을 사용하면 try 블록에서 오류가 발생하는 경우 실행할 코드 블록을 정의할 수 있다.</p>
+
+    <h2>JavaScript Throws Errors</h2>
+    <p>오류가 발생하면 JavaScript 는 일반적으로 중지되고 오류 메시지를 생성한다.<br>
+    이를 throw an exception(throw an error)라고 한다.<br>
+    JavaScript 는 실제로 이름과 메시지라는 두 가지 속성이 있는 Error 개체를 만든다.</p>
+
+    <h2>The throw Statement</h2>
+    <p>throw 문을 사요아면 사용자 지정오류를 만들 수 있다.<br>
+    기술적으로 예외를 throw로 보낼 수 있다.<br>
+    예외는 JavaScript 문자열, 숫자, 부울 또는 객체 일 수 있다.</p>
+    <p>throw "Too big"; // throw a text<br>
+    throw 500; // throw a number</p>
+
+    <h2>Input Validation Example</h2>
+    <p>input 값이 잘못되면 예외처리가 발생하는 예제<br>
+    예외가 catch 문에 잡히면 사용자 정의 오류 메시지를 출력한다.</p>
+    <p>5~10 사이 정수를 입력하시오</p>
+    <input id="test" type="text">
+    <button type="button" onclick="test()">테스트 시작</button>
+    <p id="testresult"></p>
+    <script>
+        function test() {
+            var message, x;
+            message = document.getElementById("testresult");
+            message.innerHTML = "";
+            x = document.getElementById("test").value;
+            try {
+                if(x == "") throw "비어있다.";
+                if(isNaN(x)) throw "숫자가 아니다.";
+                x = Number(x);
+                if(x < 5) throw "5보다 작다.";
+                if(x > 10) throw "10보다 크다.";
+            }
+            catch(err) {
+                message.innerHTML = "입력 값은 " + err;
+            }
+        }
+    </script>
+
+    <h2>HTML Validation</h2>
+    <p>HTML 에서 미리 정의된 유효성 검사 규칙을 사용하여 JavaScript와 HTML 유효성 검사를 조합하여 사용한다.</p>
+    <p>&lt;inpur id="demo" type="number" min="5" max="10" step="1"&gt;</p>
+    <input id="demo" type="number" min="5" max="10" step="1">
+
+    <h2>The finally Statement</h2>
+    <p>finally 문을 사용하면 결과에 관계없이 try 및 catch 후에 코드를 실행할 수 있다.</p>
+    <h4>예시</h4>
+    <p>10~20 사이 정수를 입력하시오</p>
+    <input id="test2" type="text">
+    <button type="button" onclick="test2()">테스트2 시작</button>
+    <p id="testresult2"></p>
+    <script>
+        function test2() {
+            var message, x;
+            message = document.getElementById("testresult2");
+            message.innerHTML = "";
+            x = document.getElementById("test2").value;
+            try {
+                if(x == "") throw "비어있다.";
+                if(isNaN(x)) throw "숫자가 아니다.";
+                x = Number(x);
+                if(x < 10) throw "10보다 작다.";
+                if(x > 20) throw "20보다 크다.";
+            }
+            catch(err) {
+                message.innerHTML = "입력 값은 " + err;
+            }
+            finally {
+                document.getElementById("test2").value = ""; //입력값 삭제
+            }
+        }
+    </script>
+</body>
+</html>

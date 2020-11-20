@@ -129,6 +129,18 @@
         document.write("new Date().getSeconds() : " + new Date().getSeconds());
     </script>
 
-    <h2>밀리세컨부터다시진행</h2>
+    <h2>The getMilliseconds() Method</h2>
+    <p>getMilliseconds() 메소드는 밀리세컨드를 숫자(0-999)로 반환한다.</p>
+    <script>
+        document.write("new Date().getMilliseconds() : " + new Date().getMilliseconds());
+    </script>
+
+    <h2>The getDay() Method</h2>
+    <p>getDay() 메소드는 날짜의 요일을 숫자(0-6)로 반환한다.</p>
+    <script>
+        document.write("new Date().getDay() : " + new Date().getDay() + "<br>");
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        document.write("배열을 이용하여 요일을 나타낼 수 있다. : " + days[new Date().getDay()])
+    </script>
 </body>
 </html>

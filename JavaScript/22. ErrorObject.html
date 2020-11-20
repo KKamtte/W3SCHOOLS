@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Error Object</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        #t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+        
+        #t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        
+        #t01 th {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p>JavaScript 에는 오류 발생 시 오류 정보를 제공하는 오류 개체가 내장되어 있다.<br>
+    오류 개체는 이름과 메시지 라는 두 가지 속성을 제공한다.</p>
+    
+    <h2>Error Object Properties</h2>
+    <table>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>오류 이름을 설정하거나 반환한다.</td>
+        </tr>
+        <tr>
+            <td>message</td>
+            <td>오류 메시지(문자열)를 설정하거나 반환한다.</td>
+        </tr>
+    </table>
+
+    <h2>Error Name Values</h2>
+    <p>오류 이름 속성은 여섯 가지 값을 반환할 수 있다.</p>
+    <table>
+        <tr>
+            <th>Error Name</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>EvalError</td>
+            <td>eval() 함수에서 오류가 발생하였다.</td>
+        </tr>
+        <tr>
+            <td>RangeError</td>
+            <td>범위를 벗어난 숫자가 발생하였다.</td>
+        </tr>
+        <tr>
+            <td>ReferenceError</td>
+            <td>잘못된 참조가 발생하였다.</td>
+        </tr>
+        <tr>
+            <td>SyntaxError</td>
+            <td>구문 오류가 발생하였다.</td>
+        </tr>
+        <tr>
+            <td>TypeError</td>
+            <td>유형 오류가 발생하였다.</td>
+        </tr>
+        <tr>
+            <td>URIError</td>
+            <td>encodeURI() 에서 오류가 발생하였다.</td>
+        </tr>
+    </table>
+
+    <h2>Eval Error</h2>
+    <p>eval() 함수의 오류를 나타낸다.<br>
+    최신 버전의 JavaScript 는 EvalError를 발생시키지 않는다.<br>
+    대신 SyntaxError 를 사용해야한다.</p>
+
+    <h2>Range Error</h2>
+    <p>유효한 값 범위를 벗어난 숫자를 사용하면 RangeError가 발생한다.</p>
+    <p id="range"></p>
+    <script>
+        var num = 1;
+        try {
+            num.toPrecision(500); //precision이 1~100사이가 아닌경우 에러 발생 
+        } catch(err) {
+            document.getElementById("range").innerHTML = err.name;
+        }
+    </script>
+
+    <h2>Reference Error</h2>
+    <p>선언되지 않은 변수를 사용(참조)하면 ReferenceError가 발생한다.</p>
+    <p id="ref"></p>
+    <script>
+        var x;
+        try {
+            x = y + 1; //y는 사용할 수 없음
+        } catch (err) {
+            document.getElementById("ref").innerHTML = err.name;
+        }
+    </script>
+
+    <h2>Syntax Error</h2>
+    <p>구문 오류가 있는 코드를 사용하려고 하면 SyntaxError가 발생한다.</p>
+    <p id="syn"></p>
+    <script>
+        try {
+            eval("alert('Hello)"); // '를 하나 덜 사용
+        } catch (err) {
+            document.getElementById("syn").innerHTML = err.name;
+        }
+    </script>
+
+    <h2>Type Error</h2>
+    <p>예상 유형 범위를 벗어난 값을 사용하면 TypeError가 발생한다.</p>
+    <p id="type"></p>
+    <script>
+        var num = 1;
+        try {
+            num.toUpperCase(); //number 타입에 사용할 수 없다.
+        } catch (err) {
+            document.getElementById("type").innerHTML = err.name;
+        }
+    </script>
+
+    <h2>URI (Uniform Resource Identifier) Error</h2>
+    <p>URI 함수에 잘못된 문자를 사용하면 URIError가 발생한다.</p>
+    <p id="uri"></p>
+    <script>
+        try {
+            decodeURI("%%%"); // %기호에 URI디코딩을 할 수 없다.
+        } catch (err) {
+            document.getElementById("uri").innerHTML = err.name;
+        }
+    </script>
+</body>
+</html>

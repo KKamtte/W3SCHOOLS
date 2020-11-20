@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Set Date Methods</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        #t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+        
+        #t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        
+        #t01 th {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p>Set Date 메소드를 사용하면 Date 객체에 대한 날짜 값(년, 월, 일, 시, 분, 초, 밀리초)를 설정할 수 있다.</p>
+    <h2>Set Date Methods</h2>
+    <p>다음의 메소드는 날짜 개체에서 일부를 설정하는데 사용된다.</p>
+    <table>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>setDate()</td>
+            <td>날짜를 숫자로 설정(1-31)</td>
+        </tr>
+        <tr>
+            <td>setFullYear()</td>
+            <td>연도 설정(선택적으로 월과 일 설정)</td>
+        </tr>
+        <tr>
+            <td>setHours()</td>
+            <td>시간 설정(0-23)</td>
+        </tr>
+        <tr>
+            <td>setMilliseconds()</td>
+            <td>밀리 초 설정(0-999)</td>
+        </tr>
+        <tr>
+            <td>setMinutes()</td>
+            <td>분 설정(0-59)</td>
+        </tr>
+        <tr>
+            <td>setMonth()</td>
+            <td>월 설정(0-11)</td>
+        </tr>
+        <tr>
+            <td>setSeconds()</td>
+            <td>초 설정(0-59)</td>
+        </tr>
+        <tr>
+            <td>setTime()</td>
+            <td>시간 설정(1970년1월1일 이후 밀리초)</td>
+        </tr>
+    </table>
+
+    <h2>The setFullYear() Method</h2>
+    <p>setFullYear() 메소드는 날짜 객체의 연도를 설정한다.</p>
+    <script>
+        var fullyear = new Date();
+        fullyear.setFullYear(2021);
+        document.write("2021년으로 설정 : " + fullyear + "<br>");
+        fullyear.setFullYear(2022, 11, 20);
+        document.write("setFullYear() 메소드는 선택적을 월과 일을 설정할 수 있다<br>2022년 11월 20일 : " + fullyear);
+    </script>
+
+    <h2>The setMonth() Method</h2>
+    <p>setMonth() 메소드는 날짜 객체의 월(0-11)을 설정한다.</p>
+    <script>
+        var month = new Date();
+        month.setMonth(0);
+        document.write("1월로 설정 : " + month);
+    </script>
+
+    <h2>The setDate() Method</h2>
+    <p>setDate() 메소드는 날짜 객체의 일(1-31)을 설정한다.</p>
+    <script>
+        var date = new Date();
+        date.setDate(11);
+        document.write("11일로 설정 : " + date + "<br>");
+        date = new Date();
+        date.setDate(date.getDate() + 7);
+        document.write("날짜에 날짜를 추가할 수도 있다.<br>오늘부터 1주일 뒤 : " + date);
+    </script>
+
+    <h2>The setHours() Method</h2>
+    <p>setHours() 메소드는 날짜 객체의 시간(0-23)을 설정한다.</p>
+    <script>
+        var hour = new Date();
+        hour.setHours(9);
+        document.write("오전 9시로 설정 : " + hour);
+    </script>
+
+    <h2>The setMinutes() Method</h2>
+    <p>setMinutes() 메소드는 날짜 객체의 분(0-59)을 설정한다.</p>
+    <script>
+        var min = new Date();
+        min.setMinutes(30);
+        document.write("30분으로 설정 : " + min);
+    </script>
+
+    <h2>The setSeconds() Method</h2>
+    <p>setSeconds() 메소드는 날짜 객체의 초(0-59)를 설정한다.</p>
+    <script>
+        var sec = new Date();
+        sec.setSeconds(30);
+        document.write("30초로 설정 : " + sec);
+    </script>
+
+    <h2>Compare Dates</h2>
+    <p>날짜를 비교하는것은 단순히 비교 연산자만 사용하면 된다.</p>
+    <script>
+        var today, someday1, someday2, result1, result2;
+        today = new Date();
+        someday1 = new Date();
+        someday2 = new Date();
+        someday1.setFullYear(2100, 0 , 14);
+        someday2.setFullYear(2010, 11, 30);
+
+        result1 = compare(someday1, today);
+        result2 = compare(someday2, today);
+        document.write(result1 + "<br>" + result2);
+        
+        function compare(day1, day2) {
+            if(day1 > day2) {
+                return day1 + "은 오늘보다 미래이다."
+            } else {
+                return day1 + "은 오늘보다 과거이다."
+            }
+        }
+    </script>
+</body>
+</html>
