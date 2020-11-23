@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Validation API</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        #t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+        
+        #t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        
+        #t01 th {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Constraint Validation DOM Methods</h2>
+    <table>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>checkValidity()</td>
+            <td>입력 요소에 유효한 데이터가 포함되어있으면 true를 반환</td>
+        </tr>
+        <tr>
+            <td>setCustomValidity()</td>
+            <td>입력 요소의 validationMessage속성을 설정</td>
+        </tr>
+    </table>
+
+    <h2>checkValidity Method</h2>
+    <p>입력 필드에 잘못된 데이터가 포함 된 경우 다음 메시지를 표시한다.</p>
+    <input id="check1" type="number" min="100" max="300" required>
+    <button onclick="checkVal()">OK</button>
+    <p>100~300사이에 값을 넣지 않으면 오류 메시지가 표시된다.</p>
+    <p id="check2"></p>
+    <script>
+        function checkVal() {
+            var inpObj = document.getElementById("check1");
+            if (!inpObj.checkValidity()) {
+                document.getElementById("check2").innerHTML = inpObj.validationMessage;
+            } else {
+                document.getElementById("check2").innerHTML = "입력값 정상";
+            }
+        }
+    </script>
+
+    <h2>Constraint Validation DOM Properties</h2>
+    <table>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>validity</td>
+            <td>입력 요소의 유효성과 관련된 부울 속성을 포함한다.</td>
+        </tr>
+        <tr>
+            <td>validationMessage</td>
+            <td>유효성이 거짓인 경우 브라우저가 표시 할 메시지를 포함한다.</td>
+        </tr>
+        <tr>
+            <td>willValidate</td>
+            <td>입력 요소의 유효성을 검사할지 여부를 나타낸다.</td>
+        </tr>
+    </table>
+
+    <h2>Validity Properties</h2>
+    <p>입력 요소의 유효성 속성에는 데이터 유효성과 관련된 여러 속싱이 포함된다.</p>
+    <table>
+        <tr>
+            <th>Property</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>custionError</td>
+            <td>사용자 정의 유효성 메시지가 설정된 경우 true</td>
+        </tr>
+        <tr>
+            <td>patternMismatch</td>
+            <td>요소의 값이 패턴 속성과 일치하지 않는 경우 true</td>
+        </tr>
+        <tr>
+            <td>rangeOverrflow</td>
+            <td>요소의 값이 최대 속성보다 큰 경우 true</td>
+        </tr>
+        <tr>
+            <td>rangeUnderflow</td>
+            <td>요소의 값이 최소 속성보다 작은 경우 true</td>
+        </tr>
+        <tr>
+            <td>stepMismatch</td>
+            <td>요소의 값이 단계 속성 당 유효하지 않은 경우 true</td>
+        </tr>
+        <tr>
+            <td>tooLong</td>
+            <td>요소의 값이 maxLength 속성을 초과하는 경우 true</td>
+        </tr>
+        <tr>
+            <td>typeMismatch</td>
+            <td>요소의 값이 유형 속성에 따라 유효하지 않은 경우 true</td>
+        </tr>
+        <tr>
+            <td>valueMissing</td>
+            <td>요소에 값이 없는 경우 true</td>
+        </tr>
+        <tr>
+            <td>valid</td>
+            <td>요소의 값이 유효하면 true</td>
+        </tr>
+    </table>
+
+    <h2>The rangeOverflow Property Example</h2>
+    <input id="overflow1" type="number" max="100">
+    <button onclick="overflow()">OK</button>
+    <p>100을 초과하는 값이 입력되면 overflow가 나타난다.</p>
+    <p id="overflow2"></p>
+    <script>
+        function overflow() {
+            var txt = "";
+            if(document.getElementById("overflow1").validity.rangeOverflow) {
+                txt = "Value too large";
+            } else {
+                txt = "입력값 정상 : " + document.getElementById("overflow1").value;
+            }
+            document.getElementById("overflow2").innerHTML = txt;
+        }
+    </script>
+</body>
+</html>

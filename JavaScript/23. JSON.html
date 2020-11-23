@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <h2>What is JSON?</h2>
+    <ul>
+        <li>JSON은 JavaScript Object Notion을 나타낸다.</li>
+        <li>JSON은 가벼운 데이터 교환 형식이다.</li>
+        <li>JSON은 언어 독립적이다.</li>
+        <li>JSON은 "self-describing"이며 이해하기 쉽다.</li>
+    </ul>
+    <p>JSON 구문은 JavaScript 개체 표기법 구문에서 파생되지만 JSON형식은 텍스트 전용이다.<br>
+    JSON 데이터를 읽고 생성하기 위한 코드는 모든 프로그래밍 언어로 작성할 수 있다.</p>
+
+    <h2>JSON Example</h2>
+    <p>JSON 구문은 직원 개체(3개의 직원레코드 배열)를 정의한다.</p>
+    <pre>
+    {
+        "employees":[
+        {"firstName":"John", "lastName":"Doe"},
+        {"firstName":"Anna", "lastName":"Smith"},
+        {"firstName":"Peter", "lastName":"Jones"}
+        ]
+    }
+    </pre>
+
+    <h2>JSON Syntax Rules</h2>
+    <ul>
+        <li>데이터는 Name/Value 쌍에 있다.</li>
+        <li>데이터는 쉼표로 구분된다.</li>
+        <li>중괄호는 개체를 나타낸다.</li>
+        <li>대괄호는 배열을 나타낸다.</li>
+    </ul>
+
+    <h2>JSON Data - A Name and a Value</h2>
+    <p>JSON 데이터는 JavaScript 개체 속성과 마찬가지로 Name/Value 쌍으로 나타낸다.<br>
+    Name/Value 쌍은 필드 이름과 콜론, 값으로 구성된다.</p>
+    <p>"firstName":"John"</p>
+
+    <h2>JSON Objects</h2>
+    <p>JSON객체는 중괄호 안에 작성된다.<br>
+    JavaScript에서와 마찬가지로 객체는 여러 Name/Value 쌍을 포함 할 수 있다.</p>
+    <p>{"firstName":"John","lastName":"Doe"}</p>
+
+    <h2>JSON Arrays</h2>
+    <p>JSON 배열은 대괄호 안에 작성된다.<br>
+    JavaScript에서와 마찬가지로 배열은 객체를 포함 할 수 있다.</p>
+
+    <h2>Converting a JSON Text to a JavaScript Object</h2>
+    <p>JSON의 일반적인 용도는 웹 서버에서 데이터를 읽고 웹페이지에 데이터를 표시하는 것이다.<br>
+    JavaScript 내장함수 JSON.parse() 를 사용하여 문자열을 JavaScript 객체로 변환할 수 있다.</p>
+    <p id="json"></p>
+    <script>
+        var text = '{"employees":[' +
+        '{"firstName":"John","lastName":"Doe"}, ' +
+        '{"firstName":"Anna","lastName":"Smith"}, ' +
+        '{"firstName":"Peter","lastName":"Jones"}]}';
+        obj = JSON.parse(text);
+        document.getElementById("json").innerHTML = 
+        obj.employees[1].firstName + " " +
+        obj.employees[1].lastName;
+    </script>
+    <p id="json2"></p>
+    <script>
+        var text = '{"employees":[' +
+        '{"firstName":"John","lastName":"Doe"}, ' +
+        '{"firstName":"Anna","lastName":"Smith"}, ' +
+        '{"firstName":"Peter","lastName":"Jones"}]}';
+        obj = JSON.parse(text);
+        document.getElementById("json2").innerHTML = 
+        obj.employees[0].firstName + " " +
+        obj.employees[0].lastName;
+    </script>
+</body>
+</html>

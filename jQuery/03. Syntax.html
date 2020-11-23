@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Syntax</title>
+</head>
+<body>
+    <h2>jQuery Syntax</h2>
+    <p>jQuery구문은 HTML요소를 선택하고 요소에 대한 일부 작업을 수행하기 위해 맞춤 제작되었다.<br>
+    기본구문은 $(selector).action() 이다.</p>
+    <ul>
+        <li>jQuery를 정의/접근 하기위한 기호 $</li>
+        <li>HTML 요소를 query(or find)하기 위한 (selector)</li>
+        <li>요소에 대해 수행 할 jQuery .action()</li>
+    </ul>
+    <p>Example :</p>
+    <p><span style = "background-color:wheat;">$(this).hide()</span> - 현재 요소를 숨김</p>
+    <p><span style = "background-color: wheat;">$("p").hide()</span> - 모든 p태그 요소를 숨김</p>
+    <p><span style="background-color: wheat;">$(".text").hide()</span> - class가 test인 모든 요소를 숨김</p>
+    <p><span style="background-color: wheat;">$("#test").hide()</span> - id가 test인 모든 요소를 숨김</p>
+
+    <h2>The Document Ready Event</h2>
+    <p>예제의 모든 jQuery 메소드는 문서 준비 이벤트 내에 있음을 알 수 있다.</p>
+    <pre>
+    $(document).ready(function(){
+        //jQuery method...
+    });
+    </pre>
+    <p>이는 문서로드가 완료되기 전에 jQuery코드가 실행되지 않도록 하기 위한 것이다.<br>
+    문서로 작업하기 전에 문서가 완전히 로드되고 준비 될 때까지 기다리는 것이 좋다.<br>
+    또한 헤드 섹션에서 문서 본문 앞에 JavaScript코드를 넣을 수 있다.</p>
+    <p>다음은 문서가 완전히 로드되기 전에 메소드가 실행될 경우 실패할 수 있는 몇 가지 작업 예이다.
+    <ul>
+        <li>아직 생성되지 않은 요소 숨기기 시도</li>
+        <li>아직 로드되지 않은 이미지의 크기를 가져오려고 시도</li>
+    </ul>
+    jQuery팀은 문서 준비 이벤트를 위한 더 짧은 메소드도 만들었다.</p>
+    <pre>
+    $(function(){
+        //jQuery method...
+    });
+    </pre>
+</body>
+</html>

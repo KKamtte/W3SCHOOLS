@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Tutorial</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h2>jQuery Tutorial</h2>
+    <p>jQuery는 JavaScript 의 라이브러리이다.<br>
+    jQuery는 JavaScript programming을 단순히 만들어준다.<br>
+    jQuery는 배우기 쉽다.</p>
+
+    <h2>Examples in Each Chapter</h2>
+    <script>
+        $(document).ready(function(){
+            $("p").click(function(){
+                $(this).hide();
+            });
+        });
+    </script>
+    <p>이것을 클릭하면 사라진다.</p>
+    <p>이것 또한 클릭하면 사라진다.</p>
+    <p>p태그로 정의된 모든것은 클릭하면 사라진다.</p>
+</body>
+</html>
