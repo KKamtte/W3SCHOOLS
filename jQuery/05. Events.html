@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Event Methods</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        #t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+        
+        #t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        
+        #t01 th {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>What are Events?</h2>
+    <table>
+        <tr>
+            <th>Mouse Events</th>
+            <th>Keyboard Events</th>
+            <th>Form Events</th>
+            <th>Document/Window Events</th>
+        </tr>
+        <tr>
+            <td>click</td>
+            <td>keypress</td>
+            <td>submit</td>
+            <td>load</td>
+        </tr>
+        <tr>
+            <td>dblclick</td>
+            <td>keydown</td>
+            <td>change</td>
+            <td>resize</td>
+        </tr>
+        <tr>
+            <td>mouseenter</td>
+            <td>keyup</td>
+            <td>focus</td>
+            <td>scroll</td>
+        </tr>
+        <tr>
+            <td>mouseleave</td>
+            <td></td>
+            <td>blur</td>
+            <td>unload</td>
+        </tr>
+    </table>
+
+    <h2>jQuery Syntax For Event Methods</h2>
+    <p>jQuery에서 대부분의 DOM 이벤트에는 동일한 jQuery 메소드가 있다.<br>
+    페이지의 모든 단락에 클릭 이벤트를 할당하려면 다음과 같이 하면된다.</p>
+    <pre>
+        $("p").click();</pre>
+    <p>다음 단계로 이벤트가 발생할 때 어떤 일이 발생해야하는지 정의하는 것이다.<br>
+    이벤트에 함수를 전달해야한다.</p>
+    <pre>
+    $("p").click(function(){
+        //이벤트 정의
+    });
+    </pre>
+
+    <h2>Commonly Used jQuery Event Methods</h2>
+    <p><b>$(document).ready()</b></p>
+    <p><span style="background-color: wheat;">$(document).ready()</span> 메소드를 사용하면 문서가 완전히 로드 되었을 때 함수를 실행 할 수 있다.</p>
+    <p><b>click()</b></p>
+    <p><span style="background-color: wheat;">click()</span> 메소드는 이벤트 핸들러 함수를 HTML 요소에 연결한다.<br>
+    사용자가 HTML 요소를 클릭하면 함수가 실행된다.<br>
+    다음 예제는 p태그에 클릭 이벤트가 발생하는 경우 현재 p요소를 숨긴다.</p>
+    <pre>
+        $("p").click(function(){
+            $(this).hide();
+        });
+    </pre>
+    <p><b>dblclick()</b></p>
+    <p><span style="background-color: wheat;">dblclick()</span> 메소드는 이벤트 핸들러 함수를 HTML 요소에 연결한다.<br>
+    이 함수는 사용자가 HTML 요소를 두 번 클릭하면 실행된다.</p>
+    <pre>
+        $("p").dblclick(function(){
+            $(this).hide();
+        });
+    </pre>
+    <p><b>mouseenter()</b></p>
+    <p><span style="background-color: wheat;">mouseenter()</span> 메소드는 이벤트 핸들러 함수를 HTML 요소에 연결한다.<br>
+    이 함수는 마우스 포인터가 HTML 요소에 들어갈 때 실행된다.</p>
+    <pre>
+        $("#p1").mouseenter(function(){
+            alert("p1에 마우스를 올렸다.");
+        });
+    </pre>
+    <p><b>mouseleave()</b></p>
+    <p><span style="background-color: wheat;">mouseleave()</span> 메소드는 이벤트 핸들러 함수를 HTML 요소에 연결한다.<br>
+    이 함수는 마우스 포인터가 HTML 요소를 떠날 때 실행된다.</p>
+    <pre>
+        $("#p1").mouseleave(function(){
+            alert("p1에 마우스를 벗어났다.");
+        });
+    </pre>
+    <p><b>mousedown()</b></p>
+    <p><span style="background-color: wheat;">mousedown()</span> 메소드는 이벤트 핸들러 함수를 HTML 요소에 연결한다.<br>
+    이 함수는 마우스 왼쪽, 가운데, 오른쪽 버튼을 누른 상태에서 마우스가 HTML 요소 위에 있을 때 실행된다.</p>
+    <pre>
+        $("#p1").mousedown(function(){
+            alert("p1을 클릭하였다.");
+        });
+    </pre>
+    <p><b>mouseup()</b></p>
+    <p><span style="background-color: wheat;">mouseup()</span> 메소드는 이벤트 핸들러 함수를 HTML 요소에 연결한다.<br>
+    마우스가 HTML 요소 위에 있는 동안 왼쪽, 가운데, 오른쪽 버튼을 놓으면 실행된다.</p>
+    <pre>
+        $("#p1").mouseup(function(){
+            alert("p1을 클릭하였다.");
+        });
+    </pre>
+    <p><b>hover()</b></p>
+    <p><span style="background-color: wheat;">hover()</span> 메소드는 mouseenter과 mouseleave 메소드를 합친 것이다.<br>
+    첫 번째 함수는 마우스가 HTML 요소에 들어갈 때 실행되고 두 번째 함수는 마우스가 HTML 요소를 떠날 때 실행된다.</p>
+    <pre>
+        $("#p1").hover(function(){
+            alert("p1을 들어왔다.");
+        },
+        function(){
+            alert("p1을 떠났다.");
+        });
+    </pre>
+    <p><b>foucs()</b></p>
+    <p><span style="background-color: wheat;">focus()</span> 메소드는 필드에 포커스가있을 때 실행된다.</p>
+    <pre>
+        $("input").focus(function(){
+            $(this).css("background-color", "#cccccc");
+        });
+    </pre>
+    <p><b>blur()</b></p>
+    <p><span style="background-color: wheat;">blur()</span> 메소드는 필드가 포커스를 잃을 때 실행된다.</p>
+    <pre>
+        $("input").blur(function(){
+            $(this).css("background-color", "#ffffff");
+        });
+    </pre>
+
+    <h2>The on() Method</h2>
+    <p>on() 메소드는 선택한 요소에 대해 하나 이상의 이벤트 핸들러를 연결한다.</p>
+    <pre>
+        $("p").on({
+            mouseenter: function(){
+                $(this).css("background-color", "lightgray");
+            },
+            mouseleave: function(){
+                $(this).css("background-color", "lightblue");
+            },
+            click : function(){
+                $(this).css("background-color", "yellow");
+            }
+        });
+    </pre>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Effects - Sliding</title>
+    <script src="lib/jquery-3.5.1.min.js"></script>
+    <style>      
+        #panel, #panel3 {
+          padding: 50px;
+          display: none;
+        }
+        #panel2 {
+          padding: 50px;
+        }
+        div {
+          padding: 5px;
+          text-align: center;
+          background-color: #e5eecc;
+          border: solid 1px #c3c3c3;
+        }
+    </style>
+</head>
+<body>
+    <h2>jQuery Sliding Methods</h2>
+    <p>jQuery를 사용하면 요소에 슬라이딩 효과를 만들 수 있다.<br>
+    jQuery에는 다음과 같은 slide 메소드가 있다.</p>
+    <ul>
+        <li>slideDown()</li>
+        <li>slideUp()</li>
+        <li>slideToggle()</li>
+    </ul>
+
+    <h2>jQuery slideDown() Method</h2>
+    <p><b>Syntax :</b><br>
+    $(selector).slideDown(speed, callback);</p>
+    <div id="flip">slidedown panel 실행</div>
+    <div id="panel">Hello World!</div>
+    <script>
+        $(document).ready(function(){
+            $("#flip").click(function(){
+                $("#panel").slideDown("slow");
+            });
+        });
+    </script>
+
+    <h2>jQuery slideUp() Method</h2>
+    <p><b>Syntax :</b><br>
+    $(selector).slideUp(speed, callback);</p>
+    <div id="flip2">slideUp panel 실행</div>
+    <div id="panel2">Hello World!</div>
+    <script>
+        $(document).ready(function(){
+            $("#flip2").click(function(){
+                $("#panel2").slideUp("slow");
+            });
+        });
+    </script>
+
+    <h2>jQuery slideToggle() Method</h2>
+    <p><b>Syntax :</b><br>
+    $(selector).slideToggle(speed, callback);</p>
+    <div id="flip3">slideToggle panel 실행</div>
+    <div id="panel3">Hello World!</div>
+    <script>
+        $(document).ready(function(){
+            $("#flip3").click(function(){
+                $("#panel3").slideToggle("slow");
+            });
+        });
+    </script>
+</body>
+</html>
